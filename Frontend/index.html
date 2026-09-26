@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIDTIEE — Centro de Investigación</title>
+<meta name="description" content="Centro de investigación CIDTIEE, Facultad Regional Córdoba, UTN. Investigación, transferencia, capacitaciones, servicios, calendario y acceso a las bases de datos de Notion.">
+<link rel="stylesheet" href="./src/css/styles.css">
+<script>
+(function () {
+  try {
+    var guardado = window.localStorage.getItem('cidtiee.tema');
+    if (guardado !== 'dark' && guardado !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      guardado = 'dark';
+    }
+    if (guardado === 'dark' || guardado === 'light') {
+      document.documentElement.setAttribute('data-theme', guardado);
+    }
+  } catch (error) {
+    return;
+  }
+}());
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Ir al contenido principal</a>
+
+<header class="site-header">
+  <div class="container brand">
+    <a class="brand__inicio" href="#inicio">CIDTIEE</a>
+    <p class="brand__sub">Investigación · Transferencia · Formación</p>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+      <svg class="theme-toggle__icon theme-toggle__sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
+      <svg class="theme-toggle__icon theme-toggle__luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/><circle class="theme-toggle__punto" cx="17.5" cy="6.5" r="1.1"/></svg>
+      <span class="theme-toggle__etiqueta">Modo oscuro</span>
+    </button>
+  </div>
+</header>
+
+<nav class="site-nav" data-open="false" aria-label="Navegación principal">
+  <div class="container site-nav__inner">
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-lista">
+      <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>Menú</span>
+    </button>
+
+    <ul class="nav__list" id="nav-lista">
+      <li class="nav__grupo">
+        <!-- Etiqueta de grupo oculta a pedido del usuario. Para volver a mostrarla, descomentar este span.
+        <span class="nav__grupo-titulo">Trabajo</span> -->
+        <ul class="nav__grupo-links">
+          <li><a href="#observatorio">Observatorio</a></li>
+          <li><a href="#transferencia">Transferencia</a></li>
+          <li><a href="#capacitaciones">Capacitaciones</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+        </ul>
+      </li>
+      <li class="nav__grupo">
+        <!-- Etiqueta de grupo oculta a pedido del usuario. Para volver a mostrarla, descomentar este span.
+        <span class="nav__grupo-titulo">Recursos</span> -->
+        <ul class="nav__grupo-links">
+          <li><a href="#medios">Medios</a></li>
+          <li><a href="#calendario">Calendario</a></li>
+          <li><a href="#entidades">Bases de datos</a></li>
+        </ul>
+      </li>
+      <li class="nav__grupo">
+        <!-- Etiqueta de grupo oculta a pedido del usuario. Para volver a mostrarla, descomentar este span.
+        <span class="nav__grupo-titulo">Mi cuenta</span> -->
+        <ul class="nav__grupo-links">
+          <li class="nav__cta"><a href="#mis-proyectos">Mis proyectos</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main id="contenido">
+
+  <section class="hero" id="inicio">
+    <div class="container hero__grid">
+      <div>
+        <p class="eyebrow">Facultad Regional Córdoba · UTN</p>
+        <h1>Centro de Investigación CIDTIEE</h1>
+        <p class="hero__lead">
+          Investigamos en oscilaciones y eficiencia energética, transferimos resultados
+          al sector productivo y formamos a estudiantes de ingeniería.
+        </p>
+      </div>
+      <div class="cifras" id="cifras" aria-live="polite" aria-busy="true" aria-label="Resumen del centro"></div>
+    </div>
+  </section>
+
+  <section class="onboarding" id="onboarding" aria-labelledby="onboarding-titulo" hidden>
+    <div class="container onboarding__inner">
+      <div class="onboarding__texto">
+        <h2 id="onboarding-titulo">Primera vez por acá</h2>
+        <p>Tres cosas para saber dónde está todo.</p>
+      </div>
+      <ul class="onboarding__tips">
+        <li>
+          <span class="onboarding__tip-num" aria-hidden="true">1</span>
+          <a href="#mis-proyectos">Acá ves tus tareas</a>
+        </li>
+        <li>
+          <span class="onboarding__tip-num" aria-hidden="true">2</span>
+          <a href="#calendario">Acá el calendario</a>
+        </li>
+        <li>
+          <span class="onboarding__tip-num" aria-hidden="true">3</span>
+          <a href="#entidades">Acá buscás cualquier dato</a>
+        </li>
+      </ul>
+      <button class="onboarding__cerrar" id="onboarding-cerrar" type="button">Entendido</button>
+    </div>
+  </section>
+
+  <section class="seccion" id="mis-proyectos">
+    <div class="container">
+      <div class="seccion__head">
+        <div>
+          <h2>Mis proyectos</h2>
+          <p>Todo lo que tenés asignado: tareas, reuniones y entregas de alumnos, ordenado por prioridad y por fecha.</p>
+        </div>
+        <p class="nota">Sesión de <span data-usuario>—</span></p>
+      </div>
+      <div class="misproyectos__panel" id="mis-proyectos-panel" aria-live="polite" aria-busy="true" aria-label="Tus tareas, reuniones y entregas"></div>
+    </div>
+  </section>
+
+  <section class="seccion" id="areas">
+    <div class="container">
+      <div class="seccion__head">
+        <div>
+          <h2>Áreas de trabajo</h2>
+          <p>Cinco ejes que organizan la actividad del centro. Cada uno deriva en proyectos, tareas y responsables.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="areas">
+
+        <article class="card" id="observatorio">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Observatorio</h3>
+          <p class="card__desc">Investigaciones en curso, con su línea, responsable y estado.</p>
+          <ul class="card__list">
+            <li>Oscilaciones de procesos industriales</li>
+            <li>Eficiencia energética</li>
+            <li>Instrumentación y medición</li>
+          </ul>
+          <a class="card__link" href="#entidades">Ver proyectos</a>
+        </article>
+
+        <article class="card" id="transferencia">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 8h13l-4-4"/><path d="M20 16H7l4 4"/></svg>
+          <h3>Transferencia</h3>
+          <p class="card__desc">Extensión y vínculos con el sector productivo y otras instituciones.</p>
+          <ul class="card__list">
+            <li>Convenios y acuerdos</li>
+            <li>Asistencia técnica</li>
+            <li>Proyectos conjuntos</li>
+          </ul>
+          <a class="card__link" href="#entidades">Ver proyectos</a>
+        </article>
+
+        <article class="card" id="capacitaciones">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4Z"/><path d="M20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6Z"/></svg>
+          <h3>Capacitaciones</h3>
+          <p class="card__desc">Formación de recursos humanos: cursos, prácticas y pasantes.</p>
+          <ul class="card__list">
+            <li>Cursos y talleres</li>
+            <li>Prácticas de investigación</li>
+            <li>Pasantes y becarios</li>
+          </ul>
+          <a class="card__link" href="#entidades">Ver actividades</a>
+        </article>
+
+        <article class="card" id="servicios">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 12h3l2-6 3 12 3-12 2 6h3"/><path d="M20 4v16"/></svg>
+          <h3>Servicios / Oscilaciones</h3>
+          <p class="card__desc">Laboratorio, ensayos y pruebas técnicas abiertas a la comunidad.</p>
+          <ul class="card__list">
+            <li>Laboratorio de oscilaciones</li>
+            <li>Medición y calibración</li>
+            <li>Informes técnicos</li>
+          </ul>
+          <a class="card__link" href="#entidades">Ver servicios</a>
+        </article>
+
+        <article class="card" id="medios">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 8h4l1.6-2h6.8L17 8h4v11H3Z"/><circle cx="12" cy="13" r="3.4"/></svg>
+          <h3>Medios de difusión</h3>
+          <p class="card__desc">Difusión de resultados, publicaciones y actividades abiertas.</p>
+          <ul class="card__list">
+            <li>Instagram del centro</li>
+            <li>Boletín de novedades</li>
+            <li>Convocatorias abiertas</li>
+          </ul>
+          <a class="card__link" href="#entidades">Ver publicaciones</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="calendario">
+    <div class="container">
+      <div class="seccion__head">
+        <div>
+          <h2>Calendario</h2>
+          <p>Reuniones, entregas y convocatorias en una sola vista. Cada tipo se distingue por grosor de línea, no por color.</p>
+        </div>
+      </div>
+
+      <div class="calendario">
+        <div class="cal-bloque">
+          <div class="cal-controles">
+            <button class="cal-nav" id="cal-prev" type="button" aria-label="Mes anterior">
+              <svg class="cal-nav__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 5 8 12l6.5 7"/></svg>
+              <span class="cal-nav__texto">Anterior</span>
+            </button>
+
+            <div class="cal-selects">
+              <label class="sr-only" for="cal-mes">Mes</label>
+              <select id="cal-mes" name="mes"></select>
+              <label class="sr-only" for="cal-anio">Año</label>
+              <select id="cal-anio" name="anio"></select>
+            </div>
+
+            <button class="cal-nav" id="cal-next" type="button" aria-label="Mes siguiente">
+              <span class="cal-nav__texto">Siguiente</span>
+              <svg class="cal-nav__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 5 16 12l-6.5 7"/></svg>
+            </button>
+          </div>
+
+          <table class="cal">
+            <caption id="cal-titulo" aria-live="polite">Cargando el calendario…</caption>
+            <thead>
+              <tr><th scope="col">Lun</th><th scope="col">Mar</th><th scope="col">Mié</th><th scope="col">Jue</th><th scope="col">Vie</th><th scope="col">Sáb</th><th scope="col">Dom</th></tr>
+            </thead>
+            <tbody id="cal-cuerpo" aria-busy="true"></tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 class="agenda-titulo">Agenda del mes</h3>
+          <ul class="agenda" id="agenda"></ul>
+          <ul class="leyenda" id="leyenda"></ul>
+          <h3 class="agenda-titulo panel-seccion" id="proximas-titulo">Próximas reuniones</h3>
+          <ul class="agenda" id="agenda-proximas"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="entidades">
+    <div class="container">
+      <div class="seccion__head">
+        <div>
+          <h2>Bases de datos</h2>
+          <p>Elegí qué querés ver y buscá en todos los datos de esa base. Cada tarjeta abre todos los detalles.</p>
+        </div>
+      </div>
+
+      <h3 class="explorador__pregunta" id="explorador-pregunta">¿Qué querés ver?</h3>
+      <div class="vistas" id="filtro-entidad" role="group" aria-labelledby="explorador-pregunta"></div>
+
+      <form class="explorador__controles" id="explorador-form" role="search" novalidate>
+        <div class="campo">
+          <label class="campo__etiqueta" for="buscar-registro">Buscar en todo</label>
+          <input type="search" id="buscar-registro" name="busqueda" placeholder="Escribí un nombre, un tipo, una fecha…" autocomplete="off" spellcheck="false">
+        </div>
+      </form>
+
+      <p class="explorador__conteo" id="explorador-conteo" role="status" aria-live="polite">Buscando información en Notion…</p>
+      <div class="tarjetas" id="explorador-tarjetas"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h2>CIDTIEE</h2>
+        <p>Centro de Investigación de la Facultad Regional Córdoba, Universidad Tecnológica Nacional.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Contacto</h2>
+        <p>
+          Ciudad Universitaria · Av. Haya de la Torre s/n<br>
+          Córdoba, Argentina<br>
+          <a href="mailto:cidtiee@frc.utn.edu.ar">cidtiee@frc.utn.edu.ar</a><br>
+          +54 351 452 4400
+        </p>
+      </div>
+      <div class="footer__col">
+        <h2>Secciones</h2>
+        <ul>
+          <li><a href="#observatorio">Observatorio</a></li>
+          <li><a href="#transferencia">Transferencia</a></li>
+          <li><a href="#capacitaciones">Capacitaciones</a></li>
+          <li><a href="#calendario">Calendario</a></li>
+          <li><a href="#entidades">Bases de datos</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Difusión</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/cidtiee.frc.utn?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.investigacion.frc.utn.edu.ar/cidtiee/" target="_blank" rel="noopener noreferrer">Publicaciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>&copy; <span data-anio>2026</span> CIDTIEE</span>
+      <span>Facultad Regional Córdoba · UTN</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="detalle" id="detalle" aria-labelledby="detalle-titulo">
+  <form method="dialog" class="detalle__cabecera">
+    <h2 id="detalle-titulo">Detalle de la tarjeta</h2>
+    <button class="detalle__cerrar" type="submit" value="cerrar">Cerrar</button>
+  </form>
+  <p class="detalle__meta" id="detalle-entidad">—</p>
+  <div id="detalle-cuerpo"></div>
+</dialog>
+
+<script src="./src/js/mock.js"></script>
+<script src="./src/js/notionService.js"></script>
+<script type="module" src="./src/js/ui.js"></script>
+</body>
+</html>
