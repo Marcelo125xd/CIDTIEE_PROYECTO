@@ -1,21 +1,31 @@
 # Dependencies
 node_modules/
-back/node_modules/
-front/node_modules/
+frontend/node_modules/
+backend/node_modules/
+legacy-frontend/node_modules/
+packages/*/node_modules/
 
 # Environment files
 .env
 .env.local
 .env.*.local
-back/.env
-front/.env
+backend/.env
+frontend/.env
 
 # Build outputs
 dist/
 build/
-back/dist/
-front/dist/
-front/build/
+legacy-frontend/dist/
+legacy-frontend/build/
+frontend/dist/
+backend/dist/
+packages/*/dist/
+
+# Raw Notion export (contains credentials and personal data)
+contexto_cidtiee/
+
+# ETL output (sanitized review material, not published)
+data/generated/
 
 # Logs
 *.log

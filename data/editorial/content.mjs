@@ -1,0 +1,2340 @@
+/**
+ * Capa editorial del portal CIDTIEE.
+ *
+ * Este archivo contiene el contenido público curado a partir de:
+ *  - el export de Notion del centro,
+ *  - el sitio público del CIDTIEE (investigacion.frc.utn.edu.ar/cidtiee),
+ *  - las memorias y resoluciones institucionales.
+ *
+ * No incluye datos personales de estudiantes, credenciales, CUIT/CBU,
+ * información financiera ni notas internas de reuniones.
+ */
+
+export const site = {
+  name: "CIDTIEE",
+  fullName:
+    "Centro de Investigación, Desarrollo y Transferencia de Ingeniería en Energía Eléctrica",
+  university: "Universidad Tecnológica Nacional",
+  faculty: "Facultad Regional Córdoba",
+  department: "Departamento de Ingeniería Eléctrica",
+  tagline:
+    "Investigación, desarrollo y transferencia en ingeniería en energía eléctrica.",
+  description:
+    "El CIDTIEE es un centro de investigación de la UTN Facultad Regional Córdoba dedicado a los sistemas de potencia, las redes inteligentes, la gestión de la energía, la generación distribuida y la movilidad eléctrica. Articula investigación, formación de recursos humanos, servicios técnicos y transferencia al medio socio-productivo.",
+  resolution:
+    "Aprobado por Resolución CSU 780/2019 del Consejo Superior de la UTN, del 27 de junio de 2019.",
+  history: [
+    "El Centro de Investigación, Desarrollo y Transferencia de Ingeniería en Energía Eléctrica (CIDTIEE) fue aprobado por la Resolución CSU 780/2019 del Consejo Superior de la Universidad Tecnológica Nacional, el 27 de junio de 2019.",
+    "Surge como evolución del Grupo de Investigación sobre Calidad de Potencia (GeCaP), formado en 2004 en el Departamento de Ingeniería Eléctrica de la Facultad Regional Córdoba en respuesta a las exigencias de acreditación de la CONEAU. El GeCaP se consolidó en 2007 como Grupo UTN mediante la Resolución N.º 1829/2007 y centró sus actividades en los sistemas eléctricos de potencia.",
+    "Con el tiempo, el grupo se expandió con la incorporación de becarios doctorales y nuevos profesionales, y amplió sus líneas de investigación hacia las redes inteligentes, las energías renovables, la gestión de la energía y los estudios tarifarios. Actualmente el CIDTIEE depende de la Secretaría de Ciencia y Técnica y del Departamento de Ingeniería Eléctrica de la FRC UTN.",
+  ],
+  mission:
+    "Conformar un equipo multidisciplinario de profesionales capaces de proveer soluciones innovadoras y de calidad para alcanzar la visión propuesta.",
+  vision:
+    "Obtener un posicionamiento y reconocimiento regional, nacional e internacional en el área de los Sistemas de Energía Eléctrica en todas sus ramas.",
+  objectives: [
+    "Realizar proyectos de investigación y desarrollo, de base y aplicados, en el área de los sistemas eléctricos y los procesos que los involucran, con métodos científicos reconocidos internacionalmente.",
+    "Transferir conocimiento, poniendo a disposición un centro de investigación formado en disciplinas de amplia aplicación.",
+    "Vincular a la Universidad, y en particular al Departamento de Ingeniería Eléctrica, con otras casas de altos estudios y grupos de investigación nacionales e internacionales.",
+    "Desarrollar un espacio institucional propicio para construir nuevos conocimientos, metodologías y tecnologías en ingeniería eléctrica, con énfasis en la formación de investigadores y recursos humanos de grado y posgrado.",
+    "Concretar acciones de transferencia, formación y divulgación tecnológica hacia el medio socio-económico de la región.",
+    "Ampliar las bases del centro de modelización, simulación y control aplicado a la docencia, la investigación, la transferencia y la consultoría externa.",
+  ],
+  values: [
+    "Honestidad intelectual",
+    "Compromiso institucional",
+    "Responsabilidad profesional",
+    "Respeto por la libertad de opinión",
+    "No discriminación",
+  ],
+  authorities: [
+    { role: "Dirección", name: "Dr. Ing. Miguel Piumetto", area: "Desarrollo y transferencia" },
+    { role: "Vicedirección", name: "Dr. Ing. Claudio Reineri" },
+    { role: "Dirección de Investigación", name: "PhD. Ing. Fernando Magnago" },
+    { role: "Dirección de Capacitación y Servicios", name: "Dr. Ing. Martín Pucheta" },
+  ],
+  facilities:
+    "Edificio Laboratorios Dr. Sananez – Ing. Irico, campus de la Facultad Regional Córdoba, Ciudad Universitaria. El centro cuenta con equipamiento de medición, software de simulación de sistemas eléctricos y espacios de trabajo para investigadores y tesistas.",
+  contact: {
+    email: "cidtiee@gmail.com",
+    phone: "+54 351 598-6000",
+    phoneAlt: "+54 351 598-6001",
+    extension: "1112-25",
+    address: "Maestro M. López esq. Cruz Roja Argentina",
+    city: "Ciudad Universitaria, Córdoba",
+    postalCode: "C.P. 5016",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=UTN+Facultad+Regional+C%C3%B3rdoba",
+  },
+  links: [
+    {
+      label: "Instagram",
+      url: "https://www.instagram.com/cidtiee.frc.utn/",
+      icon: "instagram",
+    },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/cidtiee-frc-utn/",
+      icon: "linkedin",
+    },
+    {
+      label: "ResearchGate",
+      url: "https://www.researchgate.net/lab/CIDTIEE-Miguel-Piumetto",
+      icon: "researchgate",
+    },
+    {
+      label: "UTN Facultad Regional Córdoba",
+      url: "https://www.frc.utn.edu.ar/",
+      icon: "utn",
+    },
+    {
+      label: "Departamento de Ingeniería Eléctrica",
+      url: "http://www.institucional.frc.utn.edu.ar/electrica/",
+      icon: "departamento",
+    },
+  ],
+  hero: {
+    eyebrow: "UTN · Facultad Regional Córdoba",
+    title:
+      "Ingeniería en energía eléctrica para los desafíos de la transición energética.",
+    lead:
+      "Investigamos, desarrollamos y transferimos conocimiento en sistemas de potencia, redes inteligentes, gestión de la energía y movilidad eléctrica.",
+    primaryCta: { label: "Conocer el centro", href: "/institucional" },
+    secondaryCta: {
+      label: "Explorar proyectos",
+      href: "/observatorio/proyectos",
+    },
+  },
+  stats: [
+    { key: "investigadores", label: "Investigadores activos", value: 13 },
+    { key: "proyectos", label: "Proyectos en curso", value: 3 },
+    { key: "publicaciones", label: "Publicaciones", value: 33 },
+    { key: "seminarios", label: "Seminarios técnicos", value: 33 },
+    { key: "trayectoria", label: "Años de trayectoria", value: 22, suffix: "+" },
+    { key: "doctores", label: "Doctores formados", value: 2 },
+  ],
+};
+
+export const areas = [
+  {
+    id: "area-potencia",
+    slug: "sistemas-de-potencia",
+    name: "Sistemas de potencia",
+    shortName: "Sistemas de potencia",
+    description:
+      "Modelado, simulación y control de sistemas eléctricos de transmisión y distribución, con foco en la estabilidad, la calidad de la energía y la operación segura de la red.",
+    lines: [
+      "Flujo de carga y estudios estáticos y dinámicos",
+      "Estabilidad y amortiguación de oscilaciones de potencia",
+      "Control de tensión y control de área amplia",
+      "Protecciones y coordinación en sistemas de distribución",
+      "Modelado y simulación en PSS/E, DIgSILENT y ETAP",
+    ],
+    icon: "potencia",
+  },
+  {
+    id: "area-energia",
+    slug: "gestion-de-la-energia",
+    name: "Gestión de la energía",
+    shortName: "Gestión de la energía",
+    description:
+      "Optimización del consumo y de la operación de sistemas energéticos, con herramientas de eficiencia, respuesta de la demanda y análisis técnico-económico.",
+    lines: [
+      "Respuesta de la demanda y optimización multinivel",
+      "Eficiencia energética en edificios e industria",
+      "Análisis de facturas y optimización tarifaria",
+      "Climatización y confort térmico",
+      "Mediciones eléctricas y calidad de potencia",
+    ],
+    icon: "energia",
+  },
+  {
+    id: "area-redes",
+    slug: "redes-inteligentes-y-generacion-distribuida",
+    name: "Redes inteligentes y generación distribuida",
+    shortName: "Redes inteligentes",
+    description:
+      "Integración de generación renovable distribuida, almacenamiento y microrredes en redes de distribución, con énfasis en la calidad de la energía y la digitalización.",
+    lines: [
+      "Generación distribuida fotovoltaica y microrredes",
+      "Almacenamiento de energía y gestión de excedentes",
+      "Calidad de potencia y perturbaciones",
+      "Digitalización de estaciones transformadoras (IEC 61850)",
+      "Impacto de la generación renovable en las protecciones",
+    ],
+    icon: "redes",
+  },
+  {
+    id: "area-mercados",
+    slug: "mercados-y-regulacion",
+    name: "Mercados eléctricos y regulación",
+    shortName: "Mercados y regulación",
+    description:
+      "Estudios sobre asignación de costos, tarifas, marcos regulatorios y mecanismos de mercado en el contexto de las redes inteligentes.",
+    lines: [
+      "Asignación de costos de operación e infraestructura",
+      "Cargos tarifarios y optimización de facturas",
+      "Análisis de marcos regulatorios y normativa eléctrica",
+      "Mecanismos de participación de la demanda",
+      "Estudios de expansión del sistema eléctrico",
+    ],
+    icon: "mercado",
+  },
+  {
+    id: "area-movilidad",
+    slug: "movilidad-electrica",
+    name: "Movilidad eléctrica",
+    shortName: "Movilidad eléctrica",
+    description:
+      "Evaluación del impacto de la movilidad eléctrica en las redes de distribución y diseño de infraestructura de carga segura y eficiente.",
+    lines: [
+      "Impacto del vehículo eléctrico en la red de distribución",
+      "Estaciones de carga y planificación de infraestructura",
+      "Análisis de emisiones evitadas y retorno económico",
+      "Normativa de instalaciones y seguridad eléctrica",
+      "Integración con generación distribuida y almacenamiento",
+    ],
+    icon: "movilidad",
+  },
+  {
+    id: "area-formacion",
+    slug: "formacion-y-transferencia",
+    name: "Formación y transferencia",
+    shortName: "Formación y transferencia",
+    description:
+      "Formación de recursos humanos de grado y posgrado, capacitación profesional y transferencia de conocimiento al medio socio-productivo.",
+    lines: [
+      "Dirección de trabajos finales, tesinas y tesis",
+      "Becas de iniciación a la investigación",
+      "Seminarios técnicos y cursos de actualización",
+      "Asistencia técnica a empresas y organismos",
+      "Producción tecnológica y propiedad intelectual",
+    ],
+    icon: "formacion",
+  },
+];
+
+export const services = [
+  {
+    id: "serv-eficiencia",
+    slug: "gestion-de-la-eficiencia-energetica",
+    name: "Gestión de la eficiencia energética",
+    category: "Gestión de la energía",
+    description:
+      "Evaluamos sistemas energéticos para identificar áreas de mejora y oportunidades de optimización del consumo.",
+    items: [
+      "Diagnóstico energético de edificios, industrias y servicios",
+      "Identificación de medidas de mejora y priorización",
+      "Análisis de indicadores de consumo y benchmarks",
+      "Propuestas de gestión y seguimiento",
+    ],
+    featured: true,
+    icon: "eficiencia",
+  },
+  {
+    id: "serv-facturas",
+    slug: "analisis-de-facturas-y-optimizacion-tarifaria",
+    name: "Análisis de facturas y optimización tarifaria",
+    category: "Gestión de la energía",
+    description:
+      "Analizamos facturas energéticas para identificar ahorros y optimizar la tarifa contratada.",
+    items: [
+      "Revisión de componentes tarifarios",
+      "Comparación de opciones de contratación",
+      "Detección de sobrecostos y errores de facturación",
+      "Recomendaciones de adecuación tarifaria",
+    ],
+    featured: true,
+    icon: "factura",
+  },
+  {
+    id: "serv-mediciones",
+    slug: "mediciones-electricas-y-calidad-de-potencia",
+    name: "Mediciones eléctricas y calidad de potencia",
+    category: "Gestión de la energía",
+    description:
+      "Medimos y monitoreamos el consumo y los parámetros de calidad de la energía con equipamiento especializado.",
+    items: [
+      "Medición de consumo y demanda",
+      "Calidad de potencia, perturbaciones y transitorios",
+      "Campos electromagnéticos en líneas y subestaciones",
+      "Informes técnicos con interpretación normativa",
+    ],
+    featured: true,
+    icon: "medicion",
+  },
+  {
+    id: "serv-renovables",
+    slug: "analisis-tecnico-economico-de-renovables",
+    name: "Análisis técnico-económico de renovables",
+    category: "Gestión de la energía",
+    description:
+      "Evaluamos el potencial de generación y de agua caliente sanitaria con fuentes renovables en el marco de la Ley de Generación Distribuida.",
+    items: [
+      "Prefactibilidad de generación fotovoltaica",
+      "Dimensionamiento y estimación de producción",
+      "Análisis de retorno económico y LCOE",
+      "Recomendaciones de integración a la red",
+    ],
+    featured: false,
+    icon: "renovable",
+  },
+  {
+    id: "serv-pliegos",
+    slug: "asistencia-en-pliegos-tecnicos",
+    name: "Asistencia en pliegos técnicos",
+    category: "Ingeniería y proyectos",
+    description:
+      "Asesoramos en la elaboración y revisión de pliegos técnicos para proyectos de ingeniería en energía eléctrica.",
+    items: [
+      "Revisión de especificaciones técnicas",
+      "Definición de alcances y criterios de aceptación",
+      "Análisis de ofertas y documentación técnica",
+      "Acompañamiento en procesos de contratación",
+    ],
+    featured: false,
+    icon: "pliego",
+  },
+  {
+    id: "serv-movilidad",
+    slug: "estudios-de-movilidad-electrica",
+    name: "Estudios de movilidad eléctrica",
+    category: "Ingeniería y proyectos",
+    description:
+      "Realizamos estudios de viabilidad y análisis del impacto de la movilidad eléctrica en la red de distribución.",
+    items: [
+      "Estimación de demanda y perfiles de carga",
+      "Impacto en redes de media y baja tensión",
+      "Emisiones evitadas y análisis económico",
+      "Planificación de infraestructura de carga",
+    ],
+    featured: true,
+    icon: "movilidad",
+  },
+  {
+    id: "serv-carga",
+    slug: "diseno-de-estaciones-de-carga",
+    name: "Diseño de estaciones de carga",
+    category: "Ingeniería y proyectos",
+    description:
+      "Desarrollamos proyectos de estaciones de carga eficientes y seguras para vehículos eléctricos.",
+    items: [
+      "Dimensionamiento eléctrico y selección de equipos",
+      "Esquemas de protección y puesta a tierra",
+      "Integración con generación y almacenamiento",
+      "Criterios de seguridad y normativa aplicable",
+    ],
+    featured: false,
+    icon: "carga",
+  },
+  {
+    id: "serv-potencia",
+    slug: "estudios-de-sistemas-de-potencia",
+    name: "Estudios de sistemas de potencia",
+    category: "Ingeniería y proyectos",
+    description:
+      "Realizamos estudios estáticos y dinámicos de sistemas de potencia en condiciones de red N y N-1.",
+    items: [
+      "Flujo de carga y cortocircuito",
+      "Estabilidad transitoria y de pequeña señal",
+      "Coordinación de protecciones",
+      "Modelado y simulación de escenarios operativos",
+    ],
+    featured: true,
+    icon: "potencia",
+  },
+  {
+    id: "serv-seguridad",
+    slug: "instalaciones-electricas-y-seguridad-electrica",
+    name: "Instalaciones eléctricas y seguridad eléctrica",
+    category: "Ingeniería y proyectos",
+    description:
+      "Asesoramos en el diseño, la verificación y la adecuación de instalaciones eléctricas conforme a la normativa vigente.",
+    items: [
+      "Revisión de instalaciones y condiciones de seguridad",
+      "Carpeta técnica de habilitación",
+      "Protecciones, puesta a tierra y equipotencialización",
+      "Adecuación a la Ley de Seguridad Eléctrica de Córdoba",
+    ],
+    featured: false,
+    icon: "seguridad",
+  },
+  {
+    id: "serv-iec61850",
+    slug: "digitalizacion-de-estaciones-transformadoras",
+    name: "Digitalización de estaciones transformadoras",
+    category: "Ingeniería y proyectos",
+    description:
+      "Acompañamos la implementación de soluciones de automatización y digitalización de estaciones transformadoras bajo IEC 61850.",
+    items: [
+      "Arquitectura de comunicaciones y protocolos",
+      "Especificación de equipos y funciones",
+      "Pruebas y puesta en servicio",
+      "Capacitación técnica del personal",
+    ],
+    featured: false,
+    icon: "digital",
+  },
+  {
+    id: "serv-capacitacion",
+    slug: "capacitaciones-tecnicas",
+    name: "Capacitaciones técnicas a medida",
+    category: "Capacitaciones",
+    description:
+      "Diseñamos y dictamos cursos presenciales o virtuales sincrónicos, con cargas horarias superiores a 20 horas, para instaladores, ingenieros y empresas.",
+    items: [
+      "Instalaciones eléctricas y seguridad eléctrica",
+      "Energías renovables y generación distribuida",
+      "Movilidad eléctrica y estaciones de carga",
+      "Enseñanza basada en competencias para docentes de ingeniería",
+      "Digitalización de estaciones transformadoras (IEC 61850)",
+    ],
+    featured: true,
+    icon: "formacion",
+  },
+];
+
+export const cases = [
+  {
+    id: "caso-epec-lineas",
+    title: "Certificación técnico-contable de líneas de BT, MT y AT",
+    client: "EPEC",
+    year: 2023,
+    description:
+      "Relevamiento y certificación técnica de líneas de distribución y transmisión para respaldar el registro contable de activos de la empresa provincial.",
+    tags: ["Distribución", "Activos", "EPEC"],
+    outcome: "Informe técnico con relevamiento de campo y validación de inventario.",
+  },
+  {
+    id: "caso-desconexion",
+    title: "Sistema inteligente de desconexión automática de carga",
+    client: "EPEC",
+    year: 2023,
+    description:
+      "Diseño y aplicación de un sistema basado en lógica difusa para la desconexión automática de carga en el sistema eléctrico provincial de Córdoba.",
+    tags: ["Protecciones", "Control", "EPEC"],
+    outcome: "Transferencia ad honorem a la Gerencia de Transmisión de EPEC.",
+  },
+  {
+    id: "caso-campos",
+    title: "Medición de campos electromagnéticos en líneas de AT y subestaciones",
+    client: "EPEC",
+    year: 2021,
+    description:
+      "Mediciones de campos electromagnéticos en las inmediaciones de líneas de alta tensión y subestaciones, con interpretación de resultados y recomendaciones.",
+    tags: ["Mediciones", "Calidad", "EPEC"],
+  },
+  {
+    id: "caso-calasanz",
+    title: "Estudio de corriente de falla a tierra en la ET Calasanz",
+    client: "UTE Tel3 – Estructuras e Item Construcciones",
+    year: 2018,
+    description:
+      "Análisis y resultados del estudio de corriente de falla a tierra en la estación transformadora Calasanz, con verificación de niveles de tensión de seguridad.",
+    tags: ["Puesta a tierra", "Subestaciones"],
+  },
+  {
+    id: "caso-pss",
+    title: "Validación y ajuste del estabilizador de potencia de Pilar II",
+    client: "EPEC",
+    year: 2018,
+    description:
+      "Validación y eventual ajuste del estabilizador de potencia (PSS) de la Central Pilar II mediante modelado y simulación dinámica.",
+    tags: ["Estabilidad", "Control", "EPEC"],
+  },
+  {
+    id: "caso-expansion",
+    title: "Modelo y simulación de la expansión del SADI",
+    client: "EPEC",
+    year: 2014,
+    description:
+      "Modelado y simulación de la planificación de la expansión del Sistema Argentino de Interconexión para evaluar escenarios de operación y refuerzos de red.",
+    tags: ["Transmisión", "Planificación", "EPEC"],
+  },
+  {
+    id: "caso-eolica",
+    title: "Modelado del sistema zona sur con incorporación de granja eólica",
+    client: "EPEC",
+    year: 2013,
+    description:
+      "Estudios y simulación del sistema eléctrico de la zona sur de EPEC con la incorporación de una granja eólica, incluyendo análisis de estabilidad y calidad de potencia.",
+    tags: ["Eólica", "Simulación", "EPEC"],
+  },
+  {
+    id: "caso-operadores",
+    title: "Capacitación y certificación de operadores de centros de control",
+    client: "EPEC y DPEC",
+    year: 2019,
+    description:
+      "Cursos dictados para la certificación de operadores bajo la norma PT15 de CAMMESA, con formación teórica y práctica en operación de sistemas eléctricos.",
+    tags: ["Capacitación", "Operación", "CAMMESA"],
+  },
+];
+
+export const production = [
+  {
+    id: "prod-auditoria",
+    title: "Sistema Experto para Auditoría Médica del Proceso de Salud",
+    year: 1997,
+    registration: "Registro N.º 705583",
+    description:
+      "Software de auditoría médica registrado como producción tecnológica. Destinatario: SEAMCO S.R.L.",
+    type: "software",
+    withIp: true,
+  },
+  {
+    id: "prod-terminal",
+    title: "Terminal Transaccional para el Proceso de Salud",
+    year: 1997,
+    registration: "Registro N.º 733100",
+    description:
+      "Terminal transaccional para el proceso de salud registrada como producción tecnológica. Destinatario: SEAMCO S.R.L.",
+    type: "software",
+    withIp: true,
+  },
+  {
+    id: "prod-pss-pilar",
+    title: "Validación y ajuste del estabilizador de potencia de la Central Pilar II",
+    year: 2018,
+    description:
+      "Estudio de validación y ajuste del PSS de la Central Pilar II, realizado para EPEC.",
+    type: "estudio",
+    withIp: false,
+  },
+  {
+    id: "prod-distribucion",
+    title: "Modelado y simulación de un sistema experto para distribución primaria",
+    year: 2014,
+    description:
+      "Desarrollo de un modelo y simulador de sistema experto para la distribución primaria de energía eléctrica, realizado para EPEC.",
+    type: "modelo",
+    withIp: false,
+  },
+  {
+    id: "prod-eolica",
+    title: "Modelo de generación eólica y su interconexión con la grilla de potencia",
+    year: 2013,
+    description:
+      "Modelo de generación eólica y su interconexión con la red, desarrollado para EPEC.",
+    type: "modelo",
+    withIp: false,
+  },
+  {
+    id: "prod-psse",
+    title: "Estudio del paquete de simulación PSS/E con la base de datos del SADI",
+    year: 2013,
+    description:
+      "Estudio del paquete de simulación para transitorios electromagnéticos PSS/E y su aplicación con la base de datos del SADI, realizado para EPEC.",
+    type: "estudio",
+    withIp: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Proyectos                                                           */
+/* ------------------------------------------------------------------ */
+
+export const projects = [
+  {
+    id: "pid-2024-costos",
+    slug: "asignacion-de-costos-red-inteligente",
+    code: "ENTCCO0010048TC",
+    title: "Aportes para la asignación de costos en el contexto de la red inteligente",
+    summary:
+      "Criterios, indicadores y metodologías para asignar costos de operación e infraestructura entre los actores de la red inteligente.",
+    description: [
+      "El proyecto busca aportar criterios, indicadores y metodologías que permitan asignar costos de operación e infraestructura para los diferentes actores de la red inteligente. Se propone identificar condiciones operativas propias de los intercambios de energía susceptibles de ser cuantificadas económicamente y asignadas a quien corresponda.",
+      "El plan de trabajo incluye la revisión del estado del arte en mercados eléctricos y asignación de cargos, el modelado de recursos renovables distribuidos y de la demanda, la simulación de escenarios con restricciones operativas y la propuesta de parámetros e indicadores para la cuantificación de cargos económicos.",
+    ],
+    type: "PID",
+    status: "en-curso",
+    startYear: 2024,
+    endYear: 2027,
+    director: "Dr. Ing. Claudio Reineri",
+    codirector: "Ing. Carlos Coyos",
+    participants: [],
+    areas: ["area-mercados", "area-redes"],
+    tags: ["Redes inteligentes", "Tarifas", "Asignación de costos"],
+    funding: "PID UTN — Proyecto de Investigación y Desarrollo",
+    featured: true,
+  },
+  {
+    id: "pid-2024-oscilaciones",
+    slug: "control-de-oscilaciones-de-potencia",
+    code: "ENTCCO0010112TC",
+    title:
+      "Análisis y control de las oscilaciones de potencia mediante control inteligente de área amplia y esquemas de protección especiales",
+    summary:
+      "Desarrollo de un controlador basado en inteligencia artificial que utiliza información global del sistema para amortiguar oscilaciones de potencia.",
+    description: [
+      "El objetivo general es formular y desarrollar un controlador para oscilaciones de potencia basado en inteligencia artificial que utilice información global del sistema y, cuando sea necesario, esquemas especiales de protección (SPS) para amortiguar estas oscilaciones.",
+      "Los objetivos específicos incluyen identificar y evaluar el estado de amortiguación de una central de generación, formular un control de área amplia, verificar el controlador ante distintos escenarios y difundir los resultados en congresos y revistas científicas.",
+    ],
+    type: "PID",
+    status: "en-curso",
+    startYear: 2024,
+    endYear: 2027,
+    director: "PhD. Ing. Fernando Magnago",
+    codirector: "Dr. Ing. Claudio Reineri",
+    participants: [],
+    areas: ["area-potencia"],
+    tags: ["Estabilidad", "Control de área amplia", "Inteligencia artificial"],
+    funding: "PID UTN — Proyecto de Investigación y Desarrollo",
+    featured: true,
+  },
+  {
+    id: "pid-pp-2024-demanda",
+    slug: "simulacion-masiva-gestion-de-demanda",
+    code: "ENPPCO0010017",
+    title:
+      "Simulación masiva para la optimización multinivel de la demanda eléctrica considerando la interacción entre usuarios y distribuidora",
+    summary:
+      "Modelo de simulación a escala real para evaluar estrategias de gestión de demanda con generación distribuida, vehículos eléctricos, climatización y baterías.",
+    description: [
+      "En continuidad con el PID sobre control de la respuesta de la demanda, el proyecto diseña e implementa un modelo de simulación a escala real que refleja la interacción entre la distribuidora y un grupo de usuarios de la misma red que participan de un programa de gestión de demanda con optimización multinivel.",
+      "El modelo incorpora perfiles de demanda más complejos con generación distribuida, vehículos eléctricos, climatización y baterías; emula la comunicación entre distribuidora y usuarios en un clúster de computadoras; y evalúa distintos escenarios de optimización para que usuarios y distribuidora se beneficien de participar.",
+    ],
+    type: "PID-PP",
+    status: "en-curso",
+    startYear: 2024,
+    endYear: 2026,
+    director: "Dr. Ing. Sergio Bragagnolo",
+    codirector: "Dr. Ing. Miguel Piumetto",
+    participants: [],
+    areas: ["area-energia", "area-redes"],
+    tags: ["Gestión de la demanda", "Optimización multinivel", "Simulación"],
+    funding: "PID UTN — Proyecto de Investigación y Desarrollo con participación de posgrado",
+    featured: true,
+  },
+  {
+    id: "pid-2021-demanda",
+    slug: "control-respuesta-demanda-grilla-inteligente",
+    title: "Control de la respuesta de la demanda de energía eléctrica en la grilla inteligente",
+    summary:
+      "Control óptimo multinivel de una microrred para gestionar la respuesta de la demanda y la generación, con interacción distribuidor-usuario.",
+    description: [
+      "El proyecto desarrolló un control óptimo multinivel de una microrred para gestionar la respuesta de la demanda y la generación existente, manteniendo la operación en un nivel de distribución seguro. Contempló la interacción distribuidor-usuario y la optimización de la eficiencia del consumo.",
+      "Se abordaron dos condiciones centrales: disminuir los costos para el usuario manteniendo su privacidad y sostener la operación de la red dentro de parámetros eléctricos aceptables.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2021,
+    endYear: 2023,
+    participants: [],
+    areas: ["area-energia", "area-redes"],
+    tags: ["Respuesta de la demanda", "Microrredes", "Optimización"],
+    featured: false,
+  },
+  {
+    id: "pid-2021-transformadores",
+    slug: "cargabilidad-de-transformadores-de-distribucion",
+    title:
+      "Estudio y análisis de la cargabilidad de transformadores de distribución (MT/BT), incidencia en la vida útil, pérdidas de energía y condiciones operativas",
+    summary:
+      "Evaluación del impacto de sobrecargas y factores de desclasificación en la vida útil y las pérdidas de transformadores de distribución.",
+    description: [
+      "El proyecto estudió la cargabilidad de transformadores de distribución de media y baja tensión, considerando el efecto de sobrecargas y de parámetros fuera de la calidad de potencia sobre la temperatura, la vida útil y las pérdidas de energía.",
+      "Se analizaron escenarios de operación con factores simultáneos de desclasificación y se propusieron criterios para acotar la cuantía y duración de las cargas en condiciones operativas exigentes.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2021,
+    endYear: 2023,
+    participants: [],
+    areas: ["area-potencia", "area-energia"],
+    tags: ["Transformadores", "Calidad de potencia", "Distribución"],
+    featured: false,
+  },
+  {
+    id: "pid-2021-protecciones",
+    slug: "coordinacion-de-protecciones-de-inversores",
+    title:
+      "Optimización de la coordinación de las protecciones de los inversores con las correspondientes de la red de distribución de baja tensión",
+    summary:
+      "Procedimiento de coordinación de protecciones contra sobretensión y sobrecorriente en esquemas con generación distribuida, cargas específicas e inversores.",
+    description: [
+      "El proyecto elaboró un procedimiento de coordinación de protecciones contra sobretensión y sobrecorriente para un esquema compuesto por cargas específicas (cargadores de baterías y equipos de frío), generación distribuida renovable y el sistema de distribución, interconectados a través de inversores.",
+      "El resultado aporta criterios de ajuste y verificación para mejorar la selectividad y la seguridad del esquema de protección en redes de baja tensión con recursos distribuidos.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2021,
+    endYear: 2023,
+    participants: [],
+    areas: ["area-redes", "area-potencia"],
+    tags: ["Protecciones", "Inversores", "Generación distribuida"],
+    featured: false,
+  },
+  {
+    id: "pid-2018-oscilaciones",
+    slug: "control-oscilaciones-baja-frecuencia",
+    code: "PID UTI4777TC",
+    title:
+      "Control de las oscilaciones de baja frecuencia en un sistema eléctrico de potencia utilizando inteligencia artificial",
+    summary:
+      "Aplicación de técnicas de inteligencia artificial al control de oscilaciones de baja frecuencia en sistemas eléctricos de potencia.",
+    description: [
+      "El proyecto abordó el control de oscilaciones de baja frecuencia en sistemas eléctricos de potencia altamente no lineales, como el Sistema Argentino de Interconexión, mediante técnicas de inteligencia artificial.",
+      "Se estudiaron estrategias de control que complementan el control automático de tensión y los estabilizadores de potencia para mejorar la amortiguación ante perturbaciones.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2018,
+    endYear: 2020,
+    participants: [],
+    areas: ["area-potencia"],
+    tags: ["Oscilaciones", "Inteligencia artificial", "Estabilidad"],
+    featured: false,
+  },
+  {
+    id: "pid-2018-subestaciones",
+    slug: "monitoreo-de-subestaciones-transformadoras",
+    code: "PID UTN4781",
+    title:
+      "Monitoreo, supervisión y gestión de subestaciones transformadoras de MT/BT en escenarios de incertidumbre",
+    summary:
+      "Monitoreo y gestión de subestaciones de distribución en contextos de incertidumbre de demanda y generación.",
+    description: [
+      "El proyecto se propuso optimizar el uso de la energía eléctrica y la operación de subestaciones transformadoras de media y baja tensión frente a escenarios de incertidumbre, considerando requerimientos de calidad y confiabilidad del suministro.",
+      "Se trabajó sobre instrumentación, supervisión y criterios de gestión para mejorar la explotación eficiente de las instalaciones de distribución.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2018,
+    endYear: 2020,
+    participants: [],
+    areas: ["area-redes", "area-potencia"],
+    tags: ["Subestaciones", "Monitoreo", "Distribución"],
+    featured: false,
+  },
+  {
+    id: "pid-2018-generacion",
+    slug: "impacto-de-generacion-distribuida-via-inversores",
+    code: "PID UTN4963",
+    title:
+      "Impacto sobre el sistema de distribución tradicional de la energía inyectada por generación distribuida vía inversores",
+    summary:
+      "Estudio del impacto técnico de la generación distribuida conectada mediante inversores en las redes de distribución.",
+    description: [
+      "El proyecto analizó el impacto de la conexión de generadores distribuidos al sistema eléctrico, en particular a nivel de distribución, sobre la operación tradicional de la red.",
+      "Se evaluaron efectos sobre la calidad de potencia, las protecciones y la operación del sistema, con el objetivo de aportar criterios para una integración segura de los recursos distribuidos.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2018,
+    endYear: 2020,
+    participants: [],
+    areas: ["area-redes"],
+    tags: ["Generación distribuida", "Inversores", "Calidad de potencia"],
+    featured: false,
+  },
+  {
+    id: "pid-2015-desconexion",
+    slug: "desconexion-automatica-de-generacion-y-carga",
+    code: "UTI3651",
+    title:
+      "Sistema experto para la desconexión automática de generación y carga en un sistema eléctrico de potencia",
+    summary:
+      "Desarrollo de un sistema experto para automatizar la desconexión de generación y carga y preservar la estabilidad del sistema.",
+    description: [
+      "El proyecto desarrolló un sistema experto para la desconexión automática de generación y carga en sistemas eléctricos de potencia que operan cerca de sus límites de estabilidad.",
+      "La propuesta buscó mejorar los mecanismos de control y protección ante perturbaciones, considerando la operación de sistemas con largas distancias entre generación y consumo.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2015,
+    endYear: 2017,
+    participants: [],
+    areas: ["area-potencia"],
+    tags: ["Sistemas expertos", "Protecciones", "Estabilidad"],
+    featured: false,
+  },
+  {
+    id: "pid-2013-tension",
+    slug: "control-optimo-inteligente-de-tension",
+    code: "PID 25/E180",
+    title: "Control óptimo inteligente de la tensión en un sistema eléctrico de potencia",
+    summary:
+      "Control reactivo-tensión mediante técnicas inteligentes en sistemas eléctricos de potencia.",
+    description: [
+      "El proyecto abordó el control de tensión en sistemas eléctricos de potencia, uno de los tres controles básicos junto con el control carga-frecuencia y el control del ángulo de la máquina generadora.",
+      "Se desarrollaron estrategias de control óptimo inteligente para mejorar el perfil de tensión y la operación del sistema.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2013,
+    endYear: 2014,
+    participants: [],
+    areas: ["area-potencia"],
+    tags: ["Control de tensión", "Optimización", "Sistemas de potencia"],
+    featured: false,
+  },
+  {
+    id: "pid-2010-eolica",
+    slug: "generacion-eolica-e-interconexion",
+    code: "PID 25/E150",
+    title:
+      "La generación eólica y su interconexión con la grilla de potencia: configuraciones, modelos y paquetes de simulación",
+    summary:
+      "Estudio de la influencia de distintos generadores eólicos en la calidad de potencia y evaluación de modelos y paquetes de simulación.",
+    description: [
+      "El proyecto investigó la influencia de la conexión de distintos tipos de generadores eólicos con la grilla de potencia sobre la calidad de potencia.",
+      "Se compararon resultados de distintos paquetes y modelos de simulación eléctrica para analizar configuraciones de aerogeneradores y su interconexión.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2010,
+    endYear: 2012,
+    participants: [],
+    areas: ["area-redes", "area-potencia"],
+    tags: ["Energía eólica", "Simulación", "Calidad de potencia"],
+    featured: false,
+  },
+  {
+    id: "pid-2008-simulador",
+    slug: "simulador-para-operadores-de-centro-de-control",
+    code: "PID 25/E135",
+    title:
+      "Factibilidad técnica para la implementación en software libre de un simulador para entrenamiento de operadores de centro de control",
+    summary:
+      "Estudio de factibilidad de un simulador de entrenamiento para operadores de centros de control de energía basado en software libre.",
+    description: [
+      "El proyecto determinó la factibilidad técnica de desarrollar un simulador para el entrenamiento de operadores de centros de control de energía utilizando herramientas de software libre.",
+      "El trabajo contempló requerimientos funcionales, arquitectura, modelos de simulación y criterios de certificación de operadores.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2008,
+    endYear: 2009,
+    participants: [],
+    areas: ["area-formacion", "area-potencia"],
+    tags: ["Simulación", "Operadores", "Software libre"],
+    featured: false,
+  },
+  {
+    id: "pid-2005-control",
+    slug: "control-en-tiempo-real-con-inteligencia-artificial",
+    code: "PID 25/E090",
+    title:
+      "Control en tiempo real de sistemas de energía eléctrica mediante inteligencia artificial",
+    summary:
+      "Desarrollo de técnicas de control en tiempo real con inteligencia artificial aplicadas a la generación y transmisión de energía eléctrica.",
+    description: [
+      "Sobre la base de una tesis doctoral y del relevamiento realizado en la Empresa Provincial de Energía Eléctrica de Córdoba, el proyecto propuso el desarrollo de un control en tiempo real del sistema de generación y transmisión mediante técnicas de inteligencia artificial.",
+      "La aplicación principal fue la restauración del sistema eléctrico y la asistencia a la operación ante contingencias.",
+    ],
+    type: "PID",
+    status: "finalizado",
+    startYear: 2005,
+    endYear: 2007,
+    participants: [],
+    areas: ["area-potencia"],
+    tags: ["Inteligencia artificial", "Control en tiempo real", "Restauración"],
+    featured: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Publicaciones                                                       */
+/* ------------------------------------------------------------------ */
+
+export const publications = [
+  {
+    id: "pub-schierloh-2023",
+    title:
+      "Real-Time Predictive Management of a Multi-Unit HVAC System Based on Heuristic Optimization. A Health Center Case Study",
+    authors: [
+      "Rodrigo M. Schierloh",
+      "Sergio N. Bragagnolo",
+      "Jorge R. Vega",
+      "Jorge Vaschetti",
+    ],
+    venue: "Journal of Energy & Buildings",
+    type: "revista",
+    year: 2023,
+    doi: "10.1016/j.enbuild.2023.113315",
+    url: "https://doi.org/10.1016/j.enbuild.2023.113315",
+    areaIds: ["area-energia"],
+    featured: true,
+  },
+  {
+    id: "pub-bragagnolo-2022-jobe",
+    title:
+      "Demand response strategy applied to planning the operation of an air conditioning system. Application to a medical center",
+    authors: [
+      "Sergio N. Bragagnolo",
+      "Rodrigo M. Schierloh",
+      "Jorge R. Vega",
+      "Jorge C. Vaschetti",
+    ],
+    venue: "Journal of Building Engineering",
+    type: "revista",
+    year: 2022,
+    doi: "10.1016/j.jobe.2022.104927",
+    url: "https://doi.org/10.1016/j.jobe.2022.104927",
+    areaIds: ["area-energia"],
+    featured: true,
+  },
+  {
+    id: "pub-bragagnolo-2022-latam",
+    title: "On the scalability of supply cost for demand management in the smart grid",
+    authors: ["Sergio N. Bragagnolo", "Jorge C. Vaschetti", "Fernando Magnago"],
+    venue: "IEEE Latin America Transactions",
+    type: "revista",
+    year: 2022,
+    areaIds: ["area-energia", "area-mercados"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2021-jksu",
+    title:
+      "A Technical and Economical Approach to Multi-Level Optimization Models for Electricity Demand Considering User-Supplier Interaction",
+    authors: ["Sergio N. Bragagnolo", "Jorge C. Vaschetti", "Fernando Magnago"],
+    venue: "Journal of King Saud University — Engineering Sciences",
+    type: "revista",
+    year: 2021,
+    doi: "10.1016/j.jksues.2021.02.005",
+    url: "https://doi.org/10.1016/j.jksues.2021.02.005",
+    areaIds: ["area-energia", "area-mercados"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2021-latam",
+    title:
+      "A Technical and Economic Criteria Comparison on Demand Side Management with Multi-Level Optimization Model",
+    authors: ["Sergio N. Bragagnolo", "Jorge C. Vaschetti", "Fernando Magnago"],
+    venue: "IEEE Latin America Transactions",
+    type: "revista",
+    year: 2021,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2020-info",
+    title:
+      "Demand Management in Smart Networks: Perspective and Control of Users and Suppliers",
+    authors: [
+      "Sergio N. Bragagnolo",
+      "Jorge C. Vaschetti",
+      "Fernando Magnago",
+      "Juan C. Gómez Targarona",
+    ],
+    venue: "Información Tecnológica",
+    type: "revista",
+    year: 2020,
+    doi: "10.4067/S0718-07642020000300159",
+    url: "https://doi.org/10.4067/S0718-07642020000300159",
+    areaIds: ["area-energia", "area-redes"],
+    featured: false,
+  },
+  {
+    id: "pub-gomez-2017-repqj",
+    title:
+      "Why some utilities are opposed to the connection of renewable distributed sources in their distribution systems",
+    authors: [
+      "Juan C. Gómez Targarona",
+      "Jorge Arcurio",
+      "Jorge Vaschetti",
+      "Carlos Coyos",
+      "Carlos Ibarlucea",
+    ],
+    venue: "Renewable Energy and Power Quality Journal (RE&PQJ)",
+    type: "revista",
+    year: 2017,
+    areaIds: ["area-redes"],
+    featured: false,
+  },
+  {
+    id: "pub-piumetto-2015-info",
+    title:
+      "Algoritmo de aprendizaje-Q aplicado al control de la calidad de potencia en redes de media tensión con generación distribuida",
+    authors: [
+      "Miguel Piumetto",
+      "Juan C. Gómez Targarona",
+      "Jorge Pucheta",
+      "Jorge C. Vaschetti",
+    ],
+    venue: "Información Tecnológica",
+    type: "revista",
+    year: 2015,
+    areaIds: ["area-redes", "area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-piumetto-2014-info",
+    title:
+      "Reducción de los factores de desbalance en un sistema de distribución de media tensión debido a la inserción de generación distribuida",
+    authors: ["Miguel Piumetto", "Juan C. Gómez Targarona", "Jorge C. Vaschetti"],
+    venue: "Información Tecnológica",
+    type: "revista",
+    year: 2014,
+    areaIds: ["area-redes"],
+    featured: false,
+  },
+  {
+    id: "pub-gomez-2013-latam",
+    title: "Distributed Generation: Impact on Protections and Power Quality",
+    authors: [
+      "Juan C. Gómez Targarona",
+      "Jorge C. Vaschetti",
+      "Carlos Coyos",
+      "Carlos Ibarlucea",
+    ],
+    venue: "IEEE Latin America Transactions",
+    type: "revista",
+    year: 2013,
+    areaIds: ["area-redes", "area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-2013-latam-1",
+    title:
+      "Simulation of a Wind-Power Plant Linked to a Transmission Grid — Part I: Modeling the Basic Wind Farm",
+    authors: ["Jorge C. Vaschetti", "Juan C. Gómez Targarona", "Jorge Arcurio"],
+    venue: "IEEE Latin America Transactions",
+    type: "revista",
+    year: 2013,
+    areaIds: ["area-redes"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-2013-latam-2",
+    title:
+      "Simulation of a Wind-Power Plant Linked to a Transmission Grid — Part II: Capacitive Compensation and Pitch Control",
+    authors: ["Jorge C. Vaschetti", "Juan C. Gómez Targarona", "Jorge Arcurio"],
+    venue: "IEEE Latin America Transactions",
+    type: "revista",
+    year: 2013,
+    areaIds: ["area-redes"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-2012-info",
+    title:
+      "Automatic Voltage Control in Electrical Power System based on Expert Systems",
+    authors: ["Jorge C. Vaschetti", "Fernando Magnago", "V. Sauchelli"],
+    venue: "Información Tecnológica",
+    type: "revista",
+    year: 2012,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-2012-latam",
+    title:
+      "Artificial Neural Network Applied to the Problem of Secondary Voltage Control",
+    authors: ["Jorge C. Vaschetti", "V. Sauchelli"],
+    venue: "IEEE Latin America Transactions",
+    type: "revista",
+    year: 2012,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-2012-info-2",
+    title:
+      "Modelado y simulación de un seccionador tensión-tiempo para protección inteligente con inclusión de generación distribuida",
+    authors: ["Jorge C. Vaschetti", "Juan C. Gómez Targarona", "J. C. Amatti"],
+    venue: "Información Tecnológica",
+    type: "revista",
+    year: 2012,
+    areaIds: ["area-redes", "area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-1984",
+    title: "Sistema de visión para robótica industrial",
+    authors: ["Jorge C. Vaschetti", "L. F. Rocha", "R. Apóstoli"],
+    venue: "Revista Telegráfica Electrónica",
+    type: "revista-nacional",
+    year: 1984,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-vaschetti-2021-adec",
+    title:
+      "El desarrollo de las energías renovables en la Provincia de Córdoba — Capítulo 1: Informe de relevamiento y actualización de la matriz energética",
+    authors: ["Jorge Vaschetti", "Marcelo Bertossi", "Jorge Arcurio"],
+    venue:
+      "Agencia para el Desarrollo Económico de Córdoba (ADEC), UNC, UTN y UNRC",
+    type: "capitulo",
+    year: 2021,
+    areaIds: ["area-redes", "area-mercados"],
+    featured: false,
+  },
+  {
+    id: "pub-piumetto-2013-matriz",
+    title:
+      "Impacto de la red inteligente y la generación distribuida en los sistemas eléctricos de distribución",
+    authors: [
+      "Miguel Piumetto",
+      "Juan C. Gómez Targarona",
+      "Jorge C. Vaschetti",
+      "S. A. Devalis",
+    ],
+    venue: "Matriz de recursos energéticos de la Provincia de Córdoba, CIECS-CONICET",
+    type: "capitulo",
+    year: 2013,
+    areaIds: ["area-redes", "area-mercados"],
+    featured: false,
+  },
+  {
+    id: "pub-bertossi-2024-ces",
+    title:
+      "Generación distribuida y autoconsumo: análisis del impacto en el retorno económico",
+    authors: ["Marcelo Bertossi", "Juan Amaya", "Sergio Bragagnolo", "F. Rasjido"],
+    venue: "5.º Congreso de Energías Sustentables (CES), Bahía Blanca",
+    type: "congreso",
+    year: 2024,
+    areaIds: ["area-redes", "area-mercados"],
+    featured: false,
+  },
+  {
+    id: "pub-pidone-2024-cadi",
+    title:
+      "Desconexión inteligente de carga en el Sistema Eléctrico Provincial de Córdoba",
+    authors: [
+      "A. G. Pidone",
+      "J. M. Carrizo",
+      "Juan I. Amaya",
+      "Sergio N. Bragagnolo",
+      "Gerardo Otta",
+      "Esteban Baez",
+    ],
+    venue: "VII Congreso de Ingeniería (CADI), San Juan",
+    type: "congreso",
+    year: 2024,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-cortez-2023-rpic",
+    title:
+      "Estudio térmico de la Vivienda Pampeana Sur I y gestión de su demanda eléctrica, incluyendo el control de los aires acondicionados",
+    authors: [
+      "José Cortez",
+      "Sergio N. Bragagnolo",
+      "Rodrigo M. Schierloh",
+      "Juan I. Amaya",
+    ],
+    venue: "XX Reunión de Trabajo en Procesamiento de la Información y Control (RPIC), Oberá",
+    type: "congreso",
+    year: 2023,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-amaya-2023-rpic",
+    title: "An automatism for contingency awareness and remediation for power system",
+    authors: ["Juan I. Amaya", "Gerardo Otta", "Jorge Vaschetti"],
+    venue: "XX Reunión de Trabajo en Procesamiento de la Información y Control (RPIC), Oberá",
+    type: "congreso",
+    year: 2023,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2022-argencon",
+    title:
+      "Optimización del costo eléctrico de grandes demandas en Argentina por medio de la gestión predictiva del sistema de climatización",
+    authors: [
+      "Sergio N. Bragagnolo",
+      "Rodrigo M. Schierloh",
+      "Jorge C. Vaschetti",
+      "Jorge R. Vega",
+    ],
+    venue: "IEEE ARGENCON 2022, San Juan",
+    type: "congreso",
+    year: 2022,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-amaya-2022-cittie",
+    title:
+      "Validación y eventual ajuste del estabilizador de potencia de la Central Pilar II",
+    authors: ["Juan I. Amaya", "Gerardo Otta", "Esteban López", "Jorge Vaschetti"],
+    venue:
+      "IV Congreso de Investigación y Transferencia Tecnológica en Ingeniería Eléctrica (CITTIE), Campana",
+    type: "congreso",
+    year: 2022,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2022-cittie",
+    title:
+      "Aplicación de una estrategia de respuesta de la demanda a la climatización de un centro médico",
+    authors: [
+      "Sergio N. Bragagnolo",
+      "Rodrigo M. Schierloh",
+      "Jorge R. Vega",
+      "Jorge C. Vaschetti",
+    ],
+    venue:
+      "IV Congreso de Investigación y Transferencia Tecnológica en Ingeniería Eléctrica (CITTIE), Campana",
+    type: "congreso",
+    year: 2022,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2022-clagtee-1",
+    title:
+      "A Framework Development to the Application of a Bilevel Optimization in Demand Side Management",
+    authors: ["Sergio N. Bragagnolo", "Jorge C. Vaschetti", "Fernando Magnago"],
+    venue: "XIV Latin-American Congress on Electricity Generation and Transmission (CLAGTEE), Río de Janeiro",
+    type: "congreso",
+    year: 2022,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2022-clagtee-2",
+    title:
+      "Formulation and Analysis of a Novel Scalable Supply Cost Function to Demand Management",
+    authors: [
+      "Sergio N. Bragagnolo",
+      "Juan Amaya",
+      "Jorge C. Vaschetti",
+      "Fernando Magnago",
+    ],
+    venue: "XIV Latin-American Congress on Electricity Generation and Transmission (CLAGTEE), Río de Janeiro",
+    type: "congreso",
+    year: 2022,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2020-aadeca",
+    title:
+      "A Technical and Economic Approach to Multi-Level Optimization Models for Electricity Demand Considering User-Supplier Interaction",
+    authors: ["Sergio N. Bragagnolo", "Jorge C. Vaschetti", "Fernando Magnago"],
+    venue: "27.º Congreso Argentino de Control Automático (AADECA), Buenos Aires",
+    type: "congreso",
+    year: 2020,
+    doi: "10.23919/AADECA49780.2020.9301640",
+    url: "https://doi.org/10.23919/AADECA49780.2020.9301640",
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2020-tdla",
+    title:
+      "Multi-Level Optimization Model for Electrical Energy Demand with User-Supplier Interaction",
+    authors: ["Sergio N. Bragagnolo", "Jorge C. Vaschetti", "Fernando Magnago"],
+    venue: "IEEE PES Transmission & Distribution Conference and Exhibition — Latin America",
+    type: "congreso",
+    year: 2020,
+    doi: "10.1109/TDLA47668.2020.9326173",
+    url: "https://doi.org/10.1109/TDLA47668.2020.9326173",
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-marrazzo-2017-rpic",
+    title:
+      "Design of a set of rules for the expert control of the disconnection — reduction of generation in an electrical power system",
+    authors: ["Miranda Marrazzo", "Nicolás Manera", "Gerardo Otta", "Jorge Vaschetti"],
+    venue: "XVII Workshop on Information Processing and Control (RPIC), Mar del Plata",
+    type: "congreso",
+    year: 2017,
+    doi: "10.23919/RPIC.2017.8211618",
+    url: "https://doi.org/10.23919/RPIC.2017.8211618",
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-piumetto-2019-clagtee",
+    title:
+      "Study and Analysis of the Earth Fault Current and Safety Voltage Levels of a Transformer Station Fed by Underground Cable",
+    authors: [
+      "Miguel Piumetto",
+      "G. Zamanillo",
+      "Juan C. Gómez Targarona",
+      "Jorge C. Vaschetti",
+      "Carlos Coyos",
+      "C. Nesci",
+      "Gerardo Otta",
+    ],
+    venue: "XIII Latin American Congress on Electricity Generation and Transmission (CLAGTEE), Santiago de Chile",
+    type: "congreso",
+    year: 2019,
+    areaIds: ["area-potencia"],
+    featured: false,
+  },
+  {
+    id: "pub-bragagnolo-2019-clagtee",
+    title: "Multi-Objective Demand Optimization Including an Air Conditioner",
+    authors: [
+      "Sergio N. Bragagnolo",
+      "Jorge C. Vaschetti",
+      "Fernando Magnago",
+      "Miguel Piumetto",
+    ],
+    venue: "XIII Latin America Congress on Electricity Generation and Transmission (CLAGTEE), Santiago de Chile",
+    type: "congreso",
+    year: 2019,
+    areaIds: ["area-energia"],
+    featured: false,
+  },
+  {
+    id: "pub-gomez-2019-cittie",
+    title:
+      "Impacto sobre el sistema de distribución tradicional de la energía inyectada por generación distribuida vía inversores",
+    authors: [
+      "Juan C. Gómez Targarona",
+      "Jorge C. Vaschetti",
+      "Miguel Piumetto",
+      "Carlos Coyos",
+      "Jorge Arcurio",
+      "Marcelo Bertossi",
+    ],
+    venue:
+      "III Congreso de Investigación y Transferencia Tecnológica en Ingeniería (CITTIE) y VIII Seminario Nacional de Energía, La Plata",
+    type: "congreso",
+    year: 2019,
+    areaIds: ["area-redes"],
+    featured: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Seminarios técnicos                                                 */
+/* ------------------------------------------------------------------ */
+
+export const seminars = [
+  {
+    id: "st-01",
+    slug: "calidad-de-la-energia-electrica",
+    edition: 1,
+    title: "Calidad de la energía eléctrica: las perturbaciones, sus causas y efectos",
+    year: 2006,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Primer seminario técnico del centro, dedicado a las perturbaciones de la calidad de la energía eléctrica, sus causas y sus efectos sobre los sistemas y equipos.",
+    topics: ["Calidad de potencia", "Perturbaciones", "Compatibilidad electromagnética"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-02",
+    slug: "energia-electrica-medicion-de-su-calidad",
+    edition: 2,
+    title: "Energía eléctrica: medición de su calidad",
+    year: 2006,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Seminario técnico sobre instrumentación, metodologías y criterios de medición de la calidad de la energía eléctrica.",
+    topics: ["Mediciones", "Calidad de potencia", "Instrumentación"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-03",
+    slug: "impacto-de-la-generacion-distribuida",
+    edition: 3,
+    title:
+      "Impacto de la generación distribuida en los sistemas de distribución de energía eléctrica",
+    year: 2007,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Análisis de los efectos técnicos de la generación distribuida en las redes de distribución y de los requisitos para su integración.",
+    topics: ["Generación distribuida", "Distribución", "Protecciones"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-04",
+    slug: "armonicos-en-sistemas-de-distribucion",
+    edition: 4,
+    title: "Armónicos en sistemas de distribución",
+    year: 2009,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Estudio de armónicos en redes de distribución, sus fuentes, efectos y metodologías de análisis y mitigación.",
+    topics: ["Armónicos", "Calidad de potencia", "Distribución"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-05",
+    slug: "protecciones-en-sistemas-de-distribucion",
+    edition: 5,
+    title: "Protecciones en sistemas de distribución: desafíos y soluciones",
+    year: 2009,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Revisión de los desafíos de coordinación y selectividad de protecciones en sistemas de distribución y de las soluciones técnicas disponibles.",
+    topics: ["Protecciones", "Coordinación", "Distribución"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-06",
+    slug: "problemas-de-calidad-de-potencia",
+    edition: 6,
+    title: "Problemas de calidad de potencia: resolución práctica",
+    year: 2010,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Enfoque práctico para la identificación y resolución de problemas de calidad de potencia en instalaciones eléctricas.",
+    topics: ["Calidad de potencia", "Diagnóstico", "Mediciones"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-07",
+    slug: "proteccion-de-transformadores-de-distribucion",
+    edition: 7,
+    title: "Protección de transformadores de distribución",
+    year: 2010,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Criterios de protección, coordinación y operación de transformadores de distribución de media y baja tensión.",
+    topics: ["Transformadores", "Protecciones", "Distribución"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-08",
+    slug: "seguridad-en-centrales-nucleares",
+    edition: 8,
+    title: "Seguridad en centrales nucleares",
+    year: 2011,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Seminario técnico sobre criterios de seguridad, operación y regulación en centrales nucleares.",
+    topics: ["Seguridad", "Generación", "Regulación"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-09",
+    slug: "coordinacion-de-protecciones-contra-sobrecorrientes",
+    edition: 9,
+    title:
+      "Estudio de la coordinación de protecciones contra sobrecorrientes en instalaciones industriales y de distribución",
+    year: 2011,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Metodologías de coordinación de protecciones contra sobrecorrientes en instalaciones industriales y redes de distribución.",
+    topics: ["Protecciones", "Sobrecorrientes", "Industria"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-10",
+    slug: "impacto-de-la-generacion-distribuida-en-protecciones",
+    edition: 10,
+    title:
+      "Impacto de la generación distribuida en los esquemas de protección contra sobrecorrientes",
+    year: 2011,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Efectos de la generación distribuida sobre la selectividad y el funcionamiento de los esquemas de protección contra sobrecorrientes.",
+    topics: ["Generación distribuida", "Protecciones", "Selectividad"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-11",
+    slug: "introduccion-a-las-smart-grids",
+    edition: 11,
+    title: "Introducción a las redes eléctricas inteligentes (Smart Grids)",
+    year: 2012,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Panorama de las redes eléctricas inteligentes, sus tecnologías, arquitecturas y desafíos de implementación.",
+    topics: ["Redes inteligentes", "Tecnologías", "Distribución"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-12",
+    slug: "energy-management-system-iso-50001",
+    edition: 12,
+    title: "Energy Management System: requisito para ISO 50001",
+    year: 2012,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Requisitos de los sistemas de gestión de la energía y su relación con la norma ISO 50001.",
+    topics: ["Gestión de la energía", "ISO 50001", "Eficiencia"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-13",
+    slug: "matriz-energetica",
+    edition: 13,
+    title: "Matriz energética",
+    year: 2013,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Análisis de la matriz energética argentina y provincial, sus fuentes, evolución y desafíos.",
+    topics: ["Matriz energética", "Política energética", "Renovables"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-14",
+    slug: "el-arco-electrico",
+    edition: 14,
+    title:
+      "El arco eléctrico: seguridad en la operación y tableros de media tensión para prestaciones con altas exigencias",
+    year: 2013,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Riesgos del arco eléctrico, criterios de seguridad y requisitos de tableros de media tensión para operaciones exigentes.",
+    topics: ["Arco eléctrico", "Seguridad", "Media tensión"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-15",
+    slug: "metodologias-reguladoras",
+    edition: 15,
+    title: "Metodologías reguladoras en el sector eléctrico argentino",
+    year: 2014,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Revisión de las metodologías de regulación tarifaria y de calidad en el sector eléctrico argentino.",
+    topics: ["Regulación", "Tarifas", "Calidad"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-16",
+    slug: "nuevas-normas-de-calidad-en-cordoba",
+    edition: 16,
+    title:
+      "Nuevas normas de calidad del servicio eléctrico en Córdoba: problemas, sanciones y soluciones técnicas",
+    year: 2014,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Análisis de las normas provinciales de calidad del servicio eléctrico y de las soluciones técnicas para su cumplimiento.",
+    topics: ["Calidad de servicio", "Regulación", "Córdoba"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-17",
+    slug: "normas-de-calidad-equipamiento-y-medicion",
+    edition: 17,
+    title:
+      "Normas de calidad del servicio eléctrico en Córdoba: equipamiento y metodología de la medición",
+    year: 2015,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Equipamiento, metodologías y criterios de medición para verificar el cumplimiento de las normas de calidad del servicio eléctrico.",
+    topics: ["Mediciones", "Calidad de servicio", "Normativa"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-18",
+    slug: "vision-estrategica-del-sector-electrico",
+    edition: 18,
+    title: "Visión estratégica de los sectores eléctricos nacional y provincial",
+    year: 2015,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Perspectivas estratégicas para el sector eléctrico nacional y provincial, con foco en planificación e inversiones.",
+    topics: ["Planificación", "Política energética", "Sector eléctrico"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-19",
+    slug: "protecciones-contra-cortocircuitos-y-sobrecargas",
+    edition: 19,
+    title:
+      "Ley de Seguridad Eléctrica: protecciones contra cortocircuitos y sobrecargas en los sistemas de distribución de media y baja tensión",
+    year: 2016,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Criterios de selección y coordinación de protecciones contra cortocircuitos y sobrecargas en el marco de la Ley de Seguridad Eléctrica.",
+    topics: ["Seguridad eléctrica", "Protecciones", "Normativa"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-20",
+    slug: "analisis-de-circuito-por-desempeno",
+    edition: 20,
+    title:
+      "Ley de Seguridad Eléctrica: análisis de circuito por desempeño para prevenir accidentes de origen eléctrico",
+    year: 2016,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Metodologías de análisis de circuitos por desempeño y su aplicación a la prevención de accidentes de origen eléctrico.",
+    topics: ["Seguridad eléctrica", "Análisis de circuitos", "Prevención"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-21",
+    slug: "puesta-a-tierra-y-equipotencializacion",
+    edition: 21,
+    title:
+      "Ley de Seguridad Eléctrica: sistemas de puesta a tierra y equipotencialización de inmuebles de acuerdo a AEA 90364 Parte 5",
+    year: 2017,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Requisitos de puesta a tierra y equipotencialización de inmuebles conforme a la reglamentación AEA 90364 Parte 5.",
+    topics: ["Puesta a tierra", "Seguridad eléctrica", "AEA 90364"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-22",
+    slug: "normativa-y-carpeta-tecnica-de-habilitacion",
+    edition: 22,
+    title:
+      "Ley de Seguridad Eléctrica: análisis de la normativa argentina y confección de la carpeta técnica de habilitación",
+    year: 2017,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Análisis de la normativa argentina de seguridad eléctrica y elaboración de la carpeta técnica de habilitación.",
+    topics: ["Seguridad eléctrica", "Normativa", "Carpeta técnica"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-23",
+    slug: "materiales-electricos-y-carpeta-tecnica",
+    edition: 23,
+    title:
+      "Ley de Seguridad Eléctrica: elección e instalación de los materiales eléctricos y carpeta técnica de habilitación",
+    year: 2018,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Criterios de elección e instalación de materiales eléctricos y su documentación en la carpeta técnica de habilitación.",
+    topics: ["Materiales eléctricos", "Seguridad eléctrica", "Carpeta técnica"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-24",
+    slug: "dispositivos-de-proteccion-y-maniobra",
+    edition: 24,
+    title:
+      "Ley de Seguridad Eléctrica: elección e instalación de dispositivos de protección, seccionamiento, maniobra y comando",
+    year: 2018,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Selección e instalación de dispositivos de protección, seccionamiento, maniobra y comando, con su correspondiente carpeta técnica.",
+    topics: ["Dispositivos de protección", "Seguridad eléctrica", "Instalaciones"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-25",
+    slug: "ley-de-seguridad-electrica-y-generacion-distribuida",
+    edition: 25,
+    title:
+      "Ley de Seguridad Eléctrica: instalación de generación distribuida fotovoltaica",
+    year: 2019,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Requisitos de seguridad eléctrica para la instalación de generación distribuida fotovoltaica en inmuebles.",
+    topics: ["Generación distribuida", "Fotovoltaica", "Seguridad eléctrica"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-26",
+    slug: "movilidad-electrica-presente-y-futuro",
+    edition: 26,
+    title:
+      "Movilidad eléctrica: presente y futuro. Investigaciones actuales. Desarrollos de instalaciones domiciliarias para carga",
+    year: 2023,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Seminario técnico sobre movilidad eléctrica, investigaciones en curso y desarrollos de instalaciones domiciliarias para carga de vehículos.",
+    topics: ["Movilidad eléctrica", "Estaciones de carga", "Redes de BT"],
+    speakers: [],
+    status: "realizado",
+    featured: false,
+  },
+  {
+    id: "st-27",
+    slug: "xxvii-movilidad-electrica",
+    edition: 27,
+    title: "Movilidad eléctrica: presente, futuro e impacto en las redes",
+    year: 2023,
+    date: "2023-10-04",
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXVII del seminario técnico, dedicada a la movilidad eléctrica, sus desarrollos actuales y los desafíos de infraestructura de carga.",
+    topics: ["Movilidad eléctrica", "Infraestructura de carga", "Distribución"],
+    speakers: [],
+    status: "realizado",
+    featured: true,
+  },
+  {
+    id: "st-28",
+    slug: "xxviii-eficiencia-energetica",
+    edition: 28,
+    title: "Eficiencia energética",
+    year: 2024,
+    date: "2024-06-26",
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXVIII del seminario técnico, dedicada a la eficiencia energética en edificios, industria y sistemas eléctricos.",
+    topics: ["Eficiencia energética", "Edificios", "Industria"],
+    speakers: [],
+    status: "realizado",
+    featured: true,
+  },
+  {
+    id: "st-29",
+    slug: "xxix-transicion-energetica",
+    edition: 29,
+    title: "Transición energética",
+    year: 2024,
+    date: "2024-10-16",
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXIX del seminario técnico, dedicada a los desafíos de la transición energética en Argentina y la región.",
+    topics: ["Transición energética", "Renovables", "Política energética"],
+    speakers: [],
+    status: "realizado",
+    featured: true,
+  },
+  {
+    id: "st-30",
+    slug: "xxx-seguridad-electrica",
+    edition: 30,
+    title: "Seguridad eléctrica",
+    year: 2025,
+    date: "2025-06-11",
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXX del seminario técnico, dedicada a la seguridad eléctrica, la normativa vigente y las buenas prácticas de instalación.",
+    topics: ["Seguridad eléctrica", "Normativa", "Instalaciones"],
+    speakers: [],
+    status: "realizado",
+    featured: true,
+  },
+  {
+    id: "st-31",
+    slug: "xxxi-generacion-distribuida",
+    edition: 31,
+    title: "Generación distribuida",
+    year: 2025,
+    date: "2025-10-15",
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXXI del seminario técnico, dedicada a la generación distribuida, su regulación y su integración a las redes de distribución.",
+    topics: ["Generación distribuida", "Regulación", "Redes"],
+    speakers: [],
+    status: "realizado",
+    featured: true,
+  },
+  {
+    id: "st-32",
+    slug: "xxxii-eficiencia-energetica",
+    edition: 32,
+    title: "Eficiencia energética",
+    year: 2026,
+    date: "2026-06-10",
+    endDate: "2026-06-10",
+    time: "15:30 a 20:00",
+    location: "Auditorio UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXXII del seminario técnico, dedicada a la eficiencia energética en el sector eléctrico, con exposiciones técnicas y espacio de intercambio.",
+    topics: ["Eficiencia energética", "Sector eléctrico", "Gestión de la energía"],
+    speakers: [],
+    status: "realizado",
+    featured: true,
+  },
+  {
+    id: "st-33",
+    slug: "xxxiii-instalaciones-especiales",
+    edition: 33,
+    title: "Instalaciones especiales",
+    year: 2026,
+    date: null,
+    location: "UTN Facultad Regional Córdoba",
+    description:
+      "Edición XXXIII del seminario técnico, dedicada a instalaciones especiales, requisitos normativos y soluciones de ingeniería.",
+    topics: ["Instalaciones especiales", "Normativa", "Seguridad eléctrica"],
+    speakers: [],
+    status: "en-organizacion",
+    featured: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Becas y convocatorias                                               */
+/* ------------------------------------------------------------------ */
+
+export const becas = [
+  {
+    id: "conv-gestion-demanda",
+    slug: "convocatoria-gestion-de-la-demanda",
+    name: "Convocatoria: Gestión de la demanda",
+    kind: "convocatoria",
+    status: "abierta",
+    year: 2026,
+    opening: null,
+    closing: null,
+    description:
+      "Convocatoria abierta para estudiantes que estén terminando la carrera de Ingeniería Eléctrica o carreras afines y quieran realizar su trabajo final sobre gestión de la demanda en el marco del PID ENPPCO0010017.",
+    conditions: [
+      "Estar cursando los últimos tramos de la carrera de Ingeniería Eléctrica o carreras afines.",
+      "Interés en gestión de la demanda, generación distribuida, vehículos eléctricos, climatización o baterías.",
+      "Los objetivos del trabajo final se definen junto con el o la estudiante.",
+    ],
+    audience: "Estudiantes avanzados de Ingeniería Eléctrica o carreras afines",
+    contact: "cidtiee@gmail.com",
+    featured: true,
+  },
+  {
+    id: "conv-climatizacion",
+    slug: "convocatoria-climatizacion-de-viviendas",
+    name: "Convocatoria: Climatización de viviendas",
+    kind: "convocatoria",
+    status: "abierta",
+    year: 2026,
+    opening: null,
+    closing: null,
+    description:
+      "Convocatoria abierta para estudiantes que estén terminando Ingeniería Mecánica o Electromecánica y quieran realizar su trabajo final en climatización de viviendas, a partir de un artículo presentado en RPIC 2023.",
+    conditions: [
+      "Estar cursando los últimos tramos de Ingeniería Mecánica o Electromecánica.",
+      "Interés en modelado térmico, confort y eficiencia energética.",
+      "Desarrollar un modelo de ecuaciones diferenciales para cinco o más viviendas residenciales.",
+    ],
+    audience: "Estudiantes avanzados de Ingeniería Mecánica o Electromecánica",
+    contact: "cidtiee@gmail.com",
+    featured: true,
+  },
+  {
+    id: "conv-movilidad",
+    slug: "convocatoria-movilidad-electrica",
+    name: "Convocatoria: Movilidad eléctrica",
+    kind: "convocatoria",
+    status: "cerrada",
+    year: 2025,
+    opening: null,
+    closing: null,
+    description:
+      "Convocatoria para estudiantes avanzados de Ingeniería Eléctrica o carreras afines interesados en analizar el impacto del vehículo eléctrico en un distribuidor de la ciudad de Córdoba y estimar las emisiones evitadas.",
+    conditions: [
+      "Estar cursando los últimos tramos de la carrera.",
+      "Interés en movilidad eléctrica y planificación de redes de distribución.",
+    ],
+    audience: "Estudiantes avanzados de Ingeniería Eléctrica o carreras afines",
+    contact: "cidtiee@gmail.com",
+    featured: false,
+  },
+  {
+    id: "beca-binid-2025",
+    slug: "beca-binid-2025",
+    name: "Beca BINID 2025",
+    kind: "beca",
+    status: "cerrada",
+    year: 2025,
+    opening: null,
+    closing: "2025-03-28",
+    description:
+      "Beca de investigación orientada al desarrollo y publicación de un trabajo final en el área de energía eléctrica, con acompañamiento de investigadores del centro.",
+    conditions: [
+      "Ser estudiante de grado de la UTN Facultad Regional Córdoba.",
+      "Presentar un plan de trabajo avalado por un docente investigador.",
+      "Cumplir con las bases y plazos de la convocatoria BINID.",
+    ],
+    audience: "Estudiantes de grado",
+    contact: "cidtiee@gmail.com",
+    featured: false,
+  },
+  {
+    id: "becas-iniciacion-utn",
+    slug: "becas-de-iniciacion-a-la-investigacion",
+    name: "Becas de iniciación a la investigación",
+    kind: "beca",
+    status: "permanente",
+    year: 2026,
+    opening: null,
+    closing: null,
+    url: "https://www.frc.utn.edu.ar/",
+    description:
+      "El CIDTIEE recibe estudiantes de grado en el marco de las becas de iniciación a la investigación del Rectorado de la UTN y de la Secretaría de Asuntos Estudiantiles de la Facultad Regional Córdoba.",
+    conditions: [
+      "Ser estudiante regular de una carrera de ingeniería de la FRC UTN.",
+      "Postularse a través de las convocatorias anuales de la Facultad.",
+      "Contar con un director de beca del centro.",
+    ],
+    audience: "Estudiantes de grado",
+    contact: "cidtiee@gmail.com",
+    featured: false,
+  },
+  {
+    id: "becas-doctorales-conicet",
+    slug: "becas-doctorales-conicet",
+    name: "Becas doctorales CONICET",
+    kind: "beca",
+    status: "externa",
+    year: 2026,
+    opening: null,
+    closing: null,
+    url: "https://www.conicet.gov.ar/",
+    description:
+      "El centro recibe becarios doctorales de CONICET en temas de sistemas de potencia, gestión de la energía, redes inteligentes y movilidad eléctrica, con dirección de investigadores del CIDTIEE.",
+    conditions: [
+      "Ser graduado o graduada de Ingeniería Eléctrica o carreras afines.",
+      "Presentar un plan de tesis y un director acreditado.",
+      "Cumplir con las bases de la convocatoria de CONICET.",
+    ],
+    audience: "Graduados de Ingeniería Eléctrica o carreras afines",
+    contact: "cidtiee@gmail.com",
+    featured: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Personas                                                            */
+/* ------------------------------------------------------------------ */
+
+export const people = [
+  {
+    id: "persona-piumetto",
+    name: "Miguel Piumetto",
+    title: "Dr. Ing.",
+    role: "Director del CIDTIEE",
+    category: "direccion",
+    areaIds: ["area-mercados", "area-redes"],
+    bio: "Doctor en Ingeniería. Dirige el centro y trabaja en redes inteligentes, generación distribuida y asignación de costos.",
+    featured: true,
+  },
+  {
+    id: "persona-reineri",
+    name: "Claudio Reineri",
+    title: "Dr. Ing.",
+    role: "Vicedirector del CIDTIEE",
+    category: "direccion",
+    areaIds: ["area-potencia", "area-mercados"],
+    bio: "Doctor en Ingeniería. Investigador en sistemas de potencia, estabilidad y mercados eléctricos.",
+    featured: true,
+  },
+  {
+    id: "persona-magnago",
+    name: "Fernando Magnago",
+    title: "PhD. Ing.",
+    role: "Director de Investigación",
+    category: "direccion",
+    areaIds: ["area-potencia"],
+    bio: "PhD en Ingeniería. Investiga estabilidad, control de área amplia y protección de sistemas eléctricos.",
+    featured: true,
+  },
+  {
+    id: "persona-pucheta",
+    name: "Martín Pucheta",
+    title: "Dr. Ing.",
+    role: "Director de Capacitación y Servicios",
+    category: "direccion",
+    areaIds: ["area-energia", "area-formacion"],
+    bio: "Doctor en Ingeniería. Coordina las actividades de capacitación y servicios técnicos del centro.",
+    featured: true,
+  },
+  {
+    id: "persona-bragagnolo",
+    name: "Sergio Bragagnolo",
+    title: "Dr. Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-energia", "area-redes"],
+    bio: "Doctor en Ingeniería. Especialista en gestión de la demanda, optimización multinivel y climatización eficiente.",
+    featured: true,
+  },
+  {
+    id: "persona-amaya",
+    name: "Juan Amaya",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-potencia"],
+    bio: "Investigador en estabilidad, control de área amplia y esquemas especiales de protección.",
+    featured: false,
+  },
+  {
+    id: "persona-bertossi",
+    name: "Marcelo Bertossi",
+    title: "Mgtr. Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-redes", "area-formacion"],
+    bio: "Magíster en Ingeniería. Trabaja en generación distribuida, autoconsumo y formación de recursos humanos.",
+    featured: false,
+  },
+  {
+    id: "persona-arcurio",
+    name: "Jorge Arcurio",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-potencia", "area-redes"],
+    bio: "Investigador en sistemas de potencia, generación renovable y calidad de la energía.",
+    featured: false,
+  },
+  {
+    id: "persona-baez",
+    name: "Esteban Baez",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-potencia"],
+    bio: "Investigador en operación y control de sistemas eléctricos.",
+    featured: false,
+  },
+  {
+    id: "persona-capellin",
+    name: "David Capellin",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-energia"],
+    bio: "Investigador en gestión de la energía y eficiencia energética.",
+    featured: false,
+  },
+  {
+    id: "persona-lopez",
+    name: "Esteban López",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-potencia"],
+    bio: "Investigador en estabilidad y control de sistemas de potencia.",
+    featured: false,
+  },
+  {
+    id: "persona-miotti",
+    name: "Cristian Miotti",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-redes"],
+    bio: "Investigador en redes inteligentes y digitalización de estaciones transformadoras.",
+    featured: false,
+  },
+  {
+    id: "persona-otta",
+    name: "Gerardo Otta",
+    title: "Ing.",
+    role: "Investigador",
+    category: "investigacion",
+    areaIds: ["area-potencia"],
+    bio: "Investigador en protecciones, automatismos y operación de sistemas eléctricos.",
+    featured: false,
+  },
+  {
+    id: "persona-vaschetti",
+    name: "Jorge Vaschetti",
+    title: "Dr. Ing.",
+    role: "Miembro honorario",
+    category: "honorario",
+    areaIds: ["area-potencia", "area-formacion"],
+    bio: "Doctor en Ingeniería. Fundador y referente del grupo de investigación que dio origen al CIDTIEE.",
+    featured: false,
+  },
+  {
+    id: "persona-gomez-targarona",
+    name: "Juan Carlos Gómez Targarona",
+    title: "PhD. Ing.",
+    role: "Miembro honorario",
+    category: "honorario",
+    areaIds: ["area-redes", "area-potencia"],
+    bio: "PhD en Ingeniería. Referente en generación distribuida, calidad de potencia y protecciones.",
+    featured: false,
+  },
+  {
+    id: "persona-coyos",
+    name: "Carlos Coyos",
+    title: "Ing.",
+    role: "Miembro honorario",
+    category: "honorario",
+    areaIds: ["area-redes"],
+    bio: "Ingeniero electricista con amplia trayectoria en distribución y generación distribuida.",
+    featured: false,
+  },
+  {
+    id: "persona-bartolomeo",
+    name: "Mario Bartolomeo",
+    title: "Ing.",
+    role: "Miembro honorario",
+    category: "honorario",
+    areaIds: ["area-potencia"],
+    bio: "Ingeniero electricista. Integrante histórico del grupo de investigación del centro.",
+    featured: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Novedades                                                           */
+/* ------------------------------------------------------------------ */
+
+export const news = [
+  {
+    id: "novedad-seminario-xxxii",
+    date: "2026-06-10",
+    title: "Se realizó el XXXII Seminario Técnico de Eficiencia Energética",
+    summary:
+      "Con una importante participación de profesionales, docentes y estudiantes, el CIDTIEE llevó adelante una nueva edición de su seminario técnico.",
+    body: [
+      "El XXXII Seminario Técnico estuvo dedicado a la eficiencia energética en el sector eléctrico y reunió a especialistas, docentes y estudiantes en el Auditorio de la UTN Facultad Regional Córdoba.",
+      "Las presentaciones abordaron criterios de gestión, medición y optimización del consumo, con espacio para preguntas e intercambio con el público.",
+    ],
+    tag: "Seminarios",
+    featured: true,
+  },
+  {
+    id: "novedad-cittie-2026",
+    date: "2026-10-07",
+    title: "El CIDTIEE participará del CITTIE 2026",
+    summary:
+      "Investigadores del centro presentarán trabajos sobre movilidad eléctrica y gestión de la demanda en el congreso de ingeniería eléctrica de la UTN Facultad Regional San Francisco.",
+    body: [
+      "La participación incluye un trabajo sobre electrolineras y otro vinculado a una tesis de maestría dirigida por el Mgtr. Ing. Marcelo Bertossi.",
+      "El plazo de presentación de trabajos se extendió hasta el 7 de noviembre de 2026.",
+    ],
+    tag: "Investigación",
+    url: "https://cittie2026.frsf.utn.edu.ar/",
+    featured: true,
+  },
+  {
+    id: "novedad-cba-ciencia",
+    date: "2026-02-16",
+    title: "Proyecto presentado a Córdoba Ciencia Productiva",
+    summary:
+      "El centro presentó una propuesta de investigación aplicada orientada a la gestión de la energía y la integración de recursos distribuidos.",
+    body: [
+      "La convocatoria Córdoba Ciencia Productiva, del Ministerio de Producción, Ciencia e Innovación Tecnológica de la Provincia de Córdoba, financió proyectos de investigación aplicada, innovación pública e innovación productiva.",
+      "La propuesta del CIDTIEE se centró en la gestión de la demanda y la integración de generación distribuida, almacenamiento y movilidad eléctrica.",
+    ],
+    tag: "Institucional",
+    featured: false,
+  },
+  {
+    id: "novedad-seminario-xxxi",
+    date: "2025-10-15",
+    title: "XXXI Seminario Técnico: Generación Distribuida",
+    summary:
+      "Especialistas del sector analizaron el estado de la generación distribuida, su regulación y los desafíos de integración a las redes.",
+    body: [
+      "La edición XXXI del seminario técnico convocó a profesionales, cooperativas y estudiantes interesados en la generación distribuida.",
+      "Se discutieron aspectos normativos, técnicos y económicos de la conexión de recursos distribuidos a las redes de distribución.",
+    ],
+    tag: "Seminarios",
+    featured: false,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Recursos                                                            */
+/* ------------------------------------------------------------------ */
+
+export const resources = [
+  {
+    id: "recurso-biblioteca",
+    title: "Biblioteca del CIDTIEE",
+    type: "Documentos",
+    description:
+      "Memorias anuales, presentaciones de seminarios, resoluciones y material de consulta del centro.",
+    url: "https://www.investigacion.frc.utn.edu.ar/cidtiee/?pIs=3161",
+    icon: "biblioteca",
+  },
+  {
+    id: "recurso-publicaciones",
+    title: "Publicaciones del centro",
+    type: "Producción científica",
+    description:
+      "Artículos en revistas internacionales, congresos y capítulos de libro de los integrantes del CIDTIEE.",
+    url: "https://www.investigacion.frc.utn.edu.ar/cidtiee/?pIs=3163",
+    icon: "publicacion",
+  },
+  {
+    id: "recurso-researchgate",
+    title: "CIDTIEE en ResearchGate",
+    type: "Red académica",
+    description:
+      "Perfil institucional con publicaciones, proyectos y líneas de investigación del centro.",
+    url: "https://www.researchgate.net/lab/CIDTIEE-Miguel-Piumetto",
+    icon: "researchgate",
+  },
+  {
+    id: "recurso-instagram",
+    title: "CIDTIEE en Instagram",
+    type: "Red social",
+    description:
+      "Novedades, seminarios, actividades de formación y difusión de las investigaciones del centro.",
+    url: "https://www.instagram.com/cidtiee.frc.utn/",
+    icon: "instagram",
+  },
+  {
+    id: "recurso-linkedin",
+    title: "CIDTIEE en LinkedIn",
+    type: "Red social",
+    description:
+      "Actualidad institucional, vinculación con el medio y oportunidades de colaboración.",
+    url: "https://www.linkedin.com/in/cidtiee-frc-utn/",
+    icon: "linkedin",
+  },
+  {
+    id: "recurso-departamento",
+    title: "Departamento de Ingeniería Eléctrica",
+    type: "Institucional",
+    description:
+      "Información académica del departamento del que depende el centro en la FRC UTN.",
+    url: "http://www.institucional.frc.utn.edu.ar/electrica/",
+    icon: "utn",
+  },
+  {
+    id: "recurso-zenodo",
+    title: "Repositorio Zenodo",
+    type: "Repositorio",
+    description:
+      "Repositorio de acceso abierto para depositar y citar materiales de investigación, presentaciones y datos.",
+    url: "https://zenodo.org/",
+    icon: "repositorio",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Calendario                                                          */
+/* ------------------------------------------------------------------ */
+
+export const calendar = [
+  {
+    id: "cal-xxvii",
+    title: "XXVII Seminario Técnico: Movilidad Eléctrica",
+    date: "2023-10-04",
+    type: "seminario",
+    description:
+      "Seminario técnico sobre movilidad eléctrica, investigaciones actuales e infraestructura de carga.",
+    location: "UTN Facultad Regional Córdoba",
+    allDay: true,
+  },
+  {
+    id: "cal-xxviii",
+    title: "XXVIII Seminario Técnico: Eficiencia Energética",
+    date: "2024-06-26",
+    type: "seminario",
+    description:
+      "Seminario técnico sobre eficiencia energética en edificios, industria y sistemas eléctricos.",
+    location: "UTN Facultad Regional Córdoba",
+    allDay: true,
+  },
+  {
+    id: "cal-xxix",
+    title: "XXIX Seminario Técnico: Transición Energética",
+    date: "2024-10-16",
+    type: "seminario",
+    description:
+      "Seminario técnico sobre los desafíos de la transición energética en Argentina y la región.",
+    location: "UTN Facultad Regional Córdoba",
+    allDay: true,
+  },
+  {
+    id: "cal-xxx",
+    title: "XXX Seminario Técnico: Seguridad Eléctrica",
+    date: "2025-06-11",
+    type: "seminario",
+    description:
+      "Seminario técnico sobre seguridad eléctrica, normativa vigente y buenas prácticas de instalación.",
+    location: "UTN Facultad Regional Córdoba",
+    allDay: true,
+  },
+  {
+    id: "cal-xxxi",
+    title: "XXXI Seminario Técnico: Generación Distribuida",
+    date: "2025-10-15",
+    type: "seminario",
+    description:
+      "Seminario técnico sobre generación distribuida, regulación e integración a las redes.",
+    location: "UTN Facultad Regional Córdoba",
+    allDay: true,
+  },
+  {
+    id: "cal-xxxii",
+    title: "XXXII Seminario Técnico: Eficiencia Energética",
+    date: "2026-06-10",
+    type: "seminario",
+    description:
+      "Seminario técnico sobre eficiencia energética en el sector eléctrico.",
+    location: "Auditorio UTN Facultad Regional Córdoba",
+    allDay: false,
+  },
+  {
+    id: "cal-cba-ciencia",
+    title: "Cierre: Córdoba Ciencia Productiva",
+    date: "2026-02-16",
+    type: "convocatoria",
+    description:
+      "Cierre de la convocatoria Córdoba Ciencia Productiva del Ministerio de Producción, Ciencia e Innovación Tecnológica.",
+    allDay: true,
+  },
+  {
+    id: "cal-cittie",
+    title: "CITTIE 2026: presentación de trabajos",
+    date: "2026-11-07",
+    type: "otro",
+    description:
+      "Plazo extendido para la presentación de trabajos al Congreso de Investigación y Transferencia Tecnológica en Ingeniería Eléctrica.",
+    url: "https://cittie2026.frsf.utn.edu.ar/",
+    allDay: true,
+  },
+];

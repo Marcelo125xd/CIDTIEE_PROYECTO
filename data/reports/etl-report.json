@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-10-24T23:23:56.380Z",
+  "source": "C:/Users/marce/OneDrive/Documentos/CIDTIEE/CIDTIEE_PROYECTO/contexto_cidtiee/25d30029-8580-4c4a-8c86-77c86595",
+  "inventory": {
+    "totalFiles": 233,
+    "totalBytes": 474404,
+    "byExtension": {
+      ".md": {
+        "files": 217,
+        "bytes": 264533
+      },
+      ".csv": {
+        "files": 15,
+        "bytes": 8129
+      },
+      ".png": {
+        "files": 1,
+        "bytes": 201742
+      }
+    }
+  },
+  "counts": {
+    "markdownTotal": 217,
+    "entities": 13,
+    "narratives": 80,
+    "internal": 124,
+    "csv": 15,
+    "csvRows": 181,
+    "csvDiscarded": 13
+  },
+  "csvByCategory": {
+    "datos": 12,
+    "estudiantes": 2,
+    "tareas": 1
+  },
+  "sensitiveFindings": {
+    "email": 43,
+    "cuit": 3,
+    "credencial": 1,
+    "cbu": 1
+  },
+  "warnings": [
+    "Se descartaron filas basura (Card/Tarjeta/Sin título) en los CSV.",
+    "124 páginas internas o con datos operativos quedaron fuera del extracto público.",
+    "Se detectaron datos sensibles; fueron redactados en el extracto y no se publican."
+  ],
+  "note": "El extracto sanitizado es material de revisión. La fuente pública del portal es data/editorial/content.mjs."
+}

@@ -1,0 +1,30 @@
+{
+  "name": "cidtiee-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal público del CIDTIEE — UTN Facultad Regional Córdoba",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "etl": "node scripts/etl.mjs",
+    "content": "npm run build:shared && node scripts/build-content.mjs",
+    "build:shared": "npm run build -w @cidtiee/shared",
+    "dev": "npm run build:shared && concurrently -n api,web -c blue,magenta \"npm run dev -w @cidtiee/backend\" \"npm run dev -w @cidtiee/frontend\"",
+    "build": "npm run build:shared && npm run build -w @cidtiee/backend && npm run build -w @cidtiee/frontend",
+    "start": "npm run start -w @cidtiee/backend",
+    "smoke": "node scripts/smoke-test.mjs",
+    "validate": "npm run etl && npm run content && npm run build && npm run smoke"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
