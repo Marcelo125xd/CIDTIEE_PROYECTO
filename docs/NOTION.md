@@ -215,3 +215,14 @@ Si algo falla, revisar los logs del backend: las advertencias indican qué base 
 - Validar slugs y enlaces antes de publicar.
 - Descargar los archivos públicos y registrarlos en `data/archivo/`.
 - Comparar el catálogo del Archivo con las ramas públicas y resolver los candidatos de revisión.
+
+## 11. Estado de la conexión (revisión local)
+
+La conexión fue probada con el token de `backend/.env`:
+
+- La API responde y el token corresponde a un bot con acceso de lectura.
+- La conexión tiene acceso a **todo el workspace**, no solo a las cinco ramas públicas. Antes de usarla en producción hay que restringirla en Notion o crear una conexión nueva y compartir únicamente las ramas públicas.
+- Las ramas públicas son **páginas con subpáginas**, no data sources. El proveedor `notion` consulta data sources; por eso el portal sigue funcionando con el contenido curado local (`CONTENT_PROVIDER=local-json`) y la jerarquía del Archivo se arma en `data/editorial/archive.mjs`.
+- Las páginas públicas contienen listas de tareas, notas de trabajo y comentarios internos. No se publican: el Archivo solo incorpora fichas curadas y enlaces revisados.
+- El export de Notion no contiene PDFs adjuntos; incluye un PNG y enlaces externos. Los archivos locales se incorporarán cuando el equipo los deposite en `data/archivo/`.
+- El calendario de congresos vigente coincide con el catálogo del Archivo. Las tablas de años anteriores incluyen montos, estados de envío y nombres de estudiantes; quedan como material de revisión y no se publican automáticamente.
