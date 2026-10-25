@@ -16,6 +16,10 @@ import { Becas } from "./pages/Becas";
 import { Calendario } from "./pages/Calendario";
 import { Medios } from "./pages/Medios";
 import { Buscar } from "./pages/Buscar";
+import { ArchiveHome } from "./pages/ArchiveHome";
+import { ArchiveSectionPage } from "./pages/ArchiveSectionPage";
+import { ArchiveSubsectionPage } from "./pages/ArchiveSubsectionPage";
+import { ArchiveDetailPage } from "./pages/ArchiveDetailPage";
 import { NotFound } from "./pages/NotFound";
 
 export function App() {
@@ -55,6 +59,13 @@ export function App() {
         <Route path="/calendario" element={<Calendario />} />
         <Route path="/medios" element={<Medios />} />
         <Route path="/buscar" element={<Buscar />} />
+        <Route path="/archivo" element={<ArchiveHome />} />
+        <Route path="/archivo/:section" element={<ArchiveSectionPage />} />
+        <Route path="/archivo/:section/:subsection" element={<ArchiveSubsectionPage />} />
+        <Route
+          path="/archivo/:section/:subsection/:slug"
+          element={<ArchiveDetailPage />}
+        />
 
         <Route path="/publicaciones" element={<Navigate to="/observatorio/publicaciones" replace />} />
         <Route path="/proyectos" element={<Navigate to="/observatorio/proyectos" replace />} />

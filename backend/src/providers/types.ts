@@ -1,4 +1,7 @@
 import type {
+  Archive,
+  ArchiveItem,
+  ArchiveQuery,
   Beca,
   BecaQuery,
   CalendarEvent,
@@ -33,5 +36,8 @@ export type ContentProvider = {
   listNews(): Promise<News[]>;
   listResources(): Promise<Resource[]>;
   getCalendar(): Promise<CalendarEvent[]>;
+  getArchive(): Promise<Archive>;
+  listArchiveItems(query: ArchiveQuery): Promise<Paginated<ArchiveItem>>;
+  getArchiveItem(slug: string): Promise<ArchiveItem | null>;
   search(query: SearchQuery): Promise<Paginated<SearchResult>>;
 };

@@ -11,6 +11,10 @@ export default defineConfig({
         target: "http://localhost:3001",
         changeOrigin: true,
       },
+      "/documentos": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
+      },
     },
   },
   build: {

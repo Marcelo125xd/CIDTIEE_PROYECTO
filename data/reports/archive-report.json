@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-10-25T01:23:58.033Z",
+  "valid": true,
+  "counts": {
+    "sections": 6,
+    "subsections": 17,
+    "items": 115,
+    "featured": 15,
+    "derived": 86,
+    "catalog": 29,
+    "bySection": {
+      "publicaciones": 33,
+      "seminarios": 33,
+      "proyectos-pid": 14,
+      "internacionalizacion": 6,
+      "congresos": 16,
+      "documentos": 13
+    },
+    "bySubsection": {
+      "publicaciones/revistas": 16,
+      "publicaciones/congresos": 15,
+      "publicaciones/otras": 2,
+      "seminarios/proximos": 1,
+      "seminarios/anteriores": 32,
+      "proyectos-pid/vigentes": 3,
+      "proyectos-pid/terminados": 11,
+      "internacionalizacion/becas": 3,
+      "internacionalizacion/convocatorias": 3,
+      "congresos/congresos": 9,
+      "congresos/llamados": 7,
+      "documentos/institucionales": 4,
+      "documentos/repositorios": 2,
+      "documentos/fuentes": 5,
+      "documentos/difusion": 2
+    },
+    "byKind": {
+      "publicacion": 33,
+      "seminario": 33,
+      "proyecto": 14,
+      "beca": 3,
+      "convocatoria": 6,
+      "congreso": 9,
+      "llamado": 4,
+      "documento": 1,
+      "enlace": 12
+    },
+    "byOrigin": {
+      "portal": 86,
+      "notion": 21,
+      "curado": 8
+    },
+    "byClassification": {
+      "curado": 86,
+      "override": 3,
+      "regla": 26
+    },
+    "emptySubsections": [
+      {
+        "section": "proyectos-pid",
+        "subsection": "en-evaluacion"
+      },
+      {
+        "section": "proyectos-pid",
+        "subsection": "rechazados"
+      }
+    ]
+  },
+  "sources": {
+    "publications": 33,
+    "seminars": 33,
+    "projects": 14,
+    "becas": 6,
+    "catalog": 29
+  },
+  "classification": {
+    "overrides": [
+      "int-becas-carolina",
+      "int-becas-daad",
+      "int-becas-canada"
+    ],
+    "rules": [
+      "beca-internacional",
+      "convocatoria-llamado",
+      "congreso-evento",
+      "repositorio-academico",
+      "canal-difusion",
+      "fuente-observatorio",
+      "referencia-institucional"
+    ]
+  },
+  "review": {
+    "unclassified": [],
+    "candidates": [
+      {
+        "source": "notion",
+        "title": "Años anteriores",
+        "reason": "Agrupa congresos de años previos sin año ni edición; hay que desglosarla antes de publicar.",
+        "suggestedSection": "congresos"
+      },
+      {
+        "source": "notion",
+        "title": "Artículos para congresos",
+        "reason": "Contiene borradores y estados de envío; no se publica hasta contar con la versión aceptada.",
+        "suggestedSection": "publicaciones"
+      },
+      {
+        "source": "notion",
+        "title": "Preprints",
+        "reason": "No se pudo determinar si los preprints son públicos o si tienen DOI/URL estable.",
+        "suggestedSection": "publicaciones"
+      },
+      {
+        "source": "notion",
+        "title": "Congresos posibles",
+        "reason": "Lista de oportunidades sin fechas confirmadas; revisar cada edición antes de publicar.",
+        "suggestedSection": "congresos"
+      },
+      {
+        "source": "notion",
+        "title": "2024",
+        "reason": "Página de año sin categoría explícita; requiere revisión para asignarla a una sección."
+      },
+      {
+        "source": "notion",
+        "title": "2025",
+        "reason": "Página de año sin categoría explícita; requiere revisión para asignarla a una sección."
+      }
+    ],
+    "warnings": []
+  }
+}

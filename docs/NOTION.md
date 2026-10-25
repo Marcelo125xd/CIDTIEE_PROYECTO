@@ -51,6 +51,26 @@ Bases previstas:
 >
 > No compartir bases de estudiantes, finanzas, reuniones, tareas internas ni ninguna con CUIT/CBU o credenciales.
 
+### Ramas públicas y Archivo
+
+El espacio de Notion del centro es una página plana: las secciones tienen títulos, enlaces y archivos, pero no una jerarquía de subpáginas. El portal no modifica esa estructura. La jerarquía del **Archivo** se define en `data/editorial/archive.mjs` y se genera en el build local.
+
+Ramas públicas previstas:
+
+- Publicaciones
+- Seminarios
+- Proyectos-PID
+- Internacionalización
+- Calendario de Congresos
+
+Compartir **solo** esas ramas con la conexión, no la página principal del centro. La página principal mezcla contenido público con material organizativo e interno.
+
+No compartir, entre otras: Proyectos-Tareas, Reuniones, Datos para Facturas/Finanzas, SCyT, Plan maestro, Recursos del centro, Administración/Memorias, Estudiantes/Investigadores/RRHH, Ideas/Recordatorio, Inversiones y Base de datos de seminario.
+
+El proveedor de Notion consulta data sources configurados; no recorre páginas hijas de forma recursiva. El catálogo del Archivo se cura a partir del export y de las fuentes públicas, y se revisa antes de publicarse.
+
+Los archivos alojados en Notion tienen URL temporales. Para publicarlos de forma estable hay que descargarlos y guardarlos en `data/archivo/`, y declarar el asset con `source: "local"` y una ruta `/documentos/archivo/...`. Ver [ARCHIVO.md](ARCHIVO.md).
+
 ## 3. Obtener los data source IDs
 
 La versión de API configurada es `2026-03-11`, que trabaja con **data sources**. El ID de la base que aparece en la URL **no sirve** para consultar: hay que copiar el ID de la fuente de datos.
@@ -193,3 +213,5 @@ Si algo falla, revisar los logs del backend: las advertencias indican qué base 
 - Definir qué bases son públicas y cuáles quedan fuera.
 - Revisar que no se importen datos de estudiantes, finanzas o reuniones internas.
 - Validar slugs y enlaces antes de publicar.
+- Descargar los archivos públicos y registrarlos en `data/archivo/`.
+- Comparar el catálogo del Archivo con las ramas públicas y resolver los candidatos de revisión.

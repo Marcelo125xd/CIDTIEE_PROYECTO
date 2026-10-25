@@ -90,6 +90,7 @@ export const SearchTypeSchema = z.enum([
   "novedad",
   "persona",
   "beca",
+  "archivo",
 ]);
 
 export type ProjectStatus = z.infer<typeof ProjectStatusSchema>;
@@ -179,6 +180,98 @@ export const SEARCH_TYPE_LABELS: Record<SearchType, string> = {
   novedad: "Novedad",
   persona: "Persona",
   beca: "Beca",
+  archivo: "Archivo",
+};
+
+export const ArchiveItemKindSchema = z.enum([
+  "publicacion",
+  "seminario",
+  "proyecto",
+  "beca",
+  "convocatoria",
+  "congreso",
+  "llamado",
+  "documento",
+  "enlace",
+]);
+
+export const ArchiveAssetKindSchema = z.enum([
+  "pdf",
+  "imagen",
+  "documento",
+  "planilla",
+  "presentacion",
+  "enlace",
+  "video",
+  "otro",
+]);
+
+export const ArchiveAssetSourceSchema = z.enum([
+  "local",
+  "externo",
+  "portal",
+  "notion",
+]);
+
+export const ArchivePreviewSchema = z.enum(["ninguna", "pdf", "imagen"]);
+
+export const ArchiveOriginSchema = z.enum([
+  "portal",
+  "notion",
+  "externo",
+  "curado",
+]);
+
+export const ArchiveClassificationMethodSchema = z.enum([
+  "curado",
+  "regla",
+  "override",
+]);
+
+export type ArchiveItemKind = z.infer<typeof ArchiveItemKindSchema>;
+export type ArchiveAssetKind = z.infer<typeof ArchiveAssetKindSchema>;
+export type ArchiveAssetSource = z.infer<typeof ArchiveAssetSourceSchema>;
+export type ArchivePreview = z.infer<typeof ArchivePreviewSchema>;
+export type ArchiveOrigin = z.infer<typeof ArchiveOriginSchema>;
+export type ArchiveClassificationMethod = z.infer<
+  typeof ArchiveClassificationMethodSchema
+>;
+
+export const ARCHIVE_ITEM_KIND_LABELS: Record<ArchiveItemKind, string> = {
+  publicacion: "Publicación",
+  seminario: "Seminario",
+  proyecto: "Proyecto",
+  beca: "Beca",
+  convocatoria: "Convocatoria",
+  congreso: "Congreso",
+  llamado: "Llamado",
+  documento: "Documento",
+  enlace: "Enlace",
+};
+
+export const ARCHIVE_ASSET_KIND_LABELS: Record<ArchiveAssetKind, string> = {
+  pdf: "PDF",
+  imagen: "Imagen",
+  documento: "Documento",
+  planilla: "Planilla",
+  presentacion: "Presentación",
+  enlace: "Enlace",
+  video: "Video",
+  otro: "Archivo",
+};
+
+export const ARCHIVE_ASSET_SOURCE_LABELS: Record<ArchiveAssetSource, string> = {
+  local: "Archivo local",
+  externo: "Fuente externa",
+  portal: "Portal CIDTIEE",
+  notion: "Notion",
+};
+
+export const ARCHIVE_ORIGIN_LABELS: Record<ArchiveOrigin, string> = {
+  portal: "Portal CIDTIEE",
+  notion: "Notion (curado)",
+  externo: "Fuente externa",
+  curado: "Curaduría editorial",
 };
 
 /* ------------------------------------------------------------------ */
@@ -423,6 +516,98 @@ export const CalendarEventSchema = z.object({
 });
 export type CalendarEvent = z.infer<typeof CalendarEventSchema>;
 
+const archiveUrl = z
+  .string()
+  .min(1)
+  .refine(
+    (value) =>
+      (/^\/(?!\/)/.test(value) && !value.includes("\\")) ||
+      /^https?:\/\//i.test(value),
+    "Se esperaba una ruta interna o una URL http(s)",
+  );
+
+export const ArchiveSubsectionSchema = z.object({
+  id: z.string().min(1),
+  slug,
+  title: z.string().min(1),
+  description: z.string().min(1),
+  order: z.number().int().default(0),
+});
+export type ArchiveSubsection = z.infer<typeof ArchiveSubsectionSchema>;
+
+export const ArchiveSectionSchema = z.object({
+  id: z.string().min(1),
+  slug,
+  title: z.string().min(1),
+  shortTitle: z.string().min(1).optional(),
+  description: z.string().min(1),
+  intro: z.array(z.string().min(1)).default([]),
+  icon: z.string().min(1).optional(),
+  order: z.number().int().default(0),
+  subsections: z.array(ArchiveSubsectionSchema).min(1),
+});
+export type ArchiveSection = z.infer<typeof ArchiveSectionSchema>;
+
+export const ArchiveAssetSchema = z.object({
+  id: z.string().min(1),
+  label: z.string().min(1),
+  kind: ArchiveAssetKindSchema,
+  url: archiveUrl,
+  source: ArchiveAssetSourceSchema.default("externo"),
+  description: z.string().min(1).optional(),
+  format: z.string().min(1).optional(),
+  size: z.string().min(1).optional(),
+  preview: ArchivePreviewSchema.default("ninguna"),
+  download: z.boolean().default(false),
+});
+export type ArchiveAsset = z.infer<typeof ArchiveAssetSchema>;
+
+export const ArchiveFactSchema = z.object({
+  label: z.string().min(1),
+  value: z.string().min(1),
+});
+export type ArchiveFact = z.infer<typeof ArchiveFactSchema>;
+
+export const ArchiveClassificationSchema = z.object({
+  method: ArchiveClassificationMethodSchema,
+  confidence: z.number().min(0).max(1),
+  rule: z.string().min(1).optional(),
+});
+export type ArchiveClassification = z.infer<typeof ArchiveClassificationSchema>;
+
+export const ArchiveItemSchema = z.object({
+  id: z.string().min(1),
+  slug,
+  section: slug,
+  subsection: slug,
+  kind: ArchiveItemKindSchema,
+  title: z.string().min(1),
+  summary: z.string().min(1),
+  body: z.array(z.string().min(1)).default([]),
+  year: year.optional(),
+  date: isoDate.nullable().optional(),
+  endDate: isoDate.nullable().optional(),
+  status: z.string().min(1).optional(),
+  authors: z.array(z.string().min(1)).default([]),
+  tags: z.array(z.string().min(1)).default([]),
+  facts: z.array(ArchiveFactSchema).default([]),
+  assets: z.array(ArchiveAssetSchema).default([]),
+  href: archiveUrl.optional(),
+  origin: ArchiveOriginSchema.default("curado"),
+  sourceId: z.string().min(1).optional(),
+  featured: z.boolean().default(false),
+  classification: ArchiveClassificationSchema,
+});
+export type ArchiveItem = z.infer<typeof ArchiveItemSchema>;
+
+export const ArchiveSchema = z.object({
+  intro: z.string().min(1),
+  scopeNotes: z.array(z.string().min(1)).default([]),
+  sections: z.array(ArchiveSectionSchema).min(1),
+  items: z.array(ArchiveItemSchema).min(1),
+});
+export type Archive = z.infer<typeof ArchiveSchema>;
+
 export const MetaSchema = z.object({
   version: z.string().min(1),
   generatedAt: z.string().datetime(),
@@ -447,6 +632,7 @@ export const ContentSchema = z.object({
   news: z.array(NewsSchema).default([]),
   resources: z.array(ResourceSchema).default([]),
   calendar: z.array(CalendarEventSchema).default([]),
+  archive: ArchiveSchema,
 });
 export type Content = z.infer<typeof ContentSchema>;
 
@@ -498,6 +684,18 @@ export type BecaQuery = {
   kind?: BecaKind;
   year?: number;
   q?: string;
+};
+
+export type ArchiveQuery = {
+  section?: string;
+  subsection?: string;
+  kind?: ArchiveItemKind;
+  year?: number;
+  featured?: boolean;
+  q?: string;
+  page?: number;
+  pageSize?: number;
+  sort?: "recent" | "oldest" | "title";
 };
 
 export type Paginated<T> = {

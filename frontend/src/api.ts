@@ -1,4 +1,7 @@
 import type {
+  Archive,
+  ArchiveItem,
+  ArchiveQuery,
   Beca,
   BecaQuery,
   CalendarEvent,
@@ -128,6 +131,24 @@ export const api = {
   news: (signal?: AbortSignal) => request<News[]>("/api/news", signal),
   resources: (signal?: AbortSignal) => request<Resource[]>("/api/resources", signal),
   calendar: (signal?: AbortSignal) => request<CalendarEvent[]>("/api/calendar", signal),
+  archive: (signal?: AbortSignal) => request<Archive>("/api/archive", signal),
+  archiveItems: (query: ArchiveQuery = {}, signal?: AbortSignal) =>
+    request<Paginated<ArchiveItem>>(
+      `/api/archive/items${buildQuery({
+        q: query.q,
+        section: query.section,
+        subsection: query.subsection,
+        kind: query.kind,
+        year: query.year,
+        featured: query.featured,
+        page: query.page,
+        pageSize: query.pageSize,
+        sort: query.sort,
+      })}`,
+      signal,
+    ),
+  archiveItem: (slug: string, signal?: AbortSignal) =>
+    request<ArchiveItem>(`/api/archive/items/${encodeURIComponent(slug)}`, signal),
   search: (query: SearchQuery, signal?: AbortSignal) =>
     request<Paginated<SearchResult>>(
       `/api/search${buildQuery({

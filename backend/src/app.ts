@@ -28,6 +28,8 @@ export function createApp(provider: ContentProvider, config: AppConfig) {
         "script-src 'self'",
         "connect-src 'self' https:",
         "font-src 'self' data:",
+        "frame-src 'self'",
+        "object-src 'self'",
         "frame-ancestors 'none'",
         "base-uri 'self'",
         "form-action 'self'",
@@ -48,6 +50,43 @@ export function createApp(provider: ContentProvider, config: AppConfig) {
   app.use(express.json({ limit: "100kb" }));
 
   app.use("/api", createApiRouter(provider));
+
+  const archiveFiles = resolve(config.repoRoot, "data/archivo");
+  const archiveDocumentPattern =
+    /\.(pdf|png|jpe?g|webp|gif|docx?|xlsx?|pptx?|txt|csv)$/i;
+  const archiveNotFound = (_req: Request, res: Response) => {
+    res.status(404).json({ error: { status: 404, message: "Documento no encontrado" } });
+  };
+
+  app.use(
+    "/documentos/archivo",
+    (req, res, next) => {
+      // Solo se publican documentos e imágenes. Cualquier otro formato
+      // (HTML, SVG, scripts) se rechaza para no servir contenido ejecutable
+      // desde el mismo origen.
+      if (!archiveDocumentPattern.test(req.path)) {
+        archiveNotFound(req, res);
+        return;
+      }
+      next();
+    },
+    express.static(archiveFiles, {
+      index: false,
+      dotfiles: "deny",
+      maxAge: "1h",
+      setHeaders: (res, path) => {
+        // Los PDF e imágenes locales se previsualizan dentro del portal.
+        // El CSP global usa frame-ancestors 'none'; para estos archivos se
+        // permite el mismo origen.
+        res.setHeader("X-Frame-Options", "SAMEORIGIN");
+        res.setHeader("Content-Security-Policy", "frame-ancestors 'self'");
+        if (/\.pdf$/i.test(path)) {
+          res.setHeader("Content-Disposition", "inline");
+        }
+      },
+    }),
+  );
+  app.use("/documentos", archiveNotFound);
 
   const frontendDist = resolve(config.repoRoot, "frontend/dist");
   if (existsSync(frontendDist)) {
@@ -87,6 +126,8 @@ export function createApp(provider: ContentProvider, config: AppConfig) {
           "/api/news",
           "/api/resources",
           "/api/calendar",
+          "/api/archive",
+          "/api/archive/items",
           "/api/search?q=energía",
         ],
       });

@@ -1,5 +1,6 @@
 import type { ParsedQs } from "qs";
 import {
+  ArchiveItemKindSchema,
   BecaKindSchema,
   BecaStatusSchema,
   ProjectStatusSchema,
@@ -7,6 +8,7 @@ import {
   PublicationTypeSchema,
   SeminarStatusSchema,
   SearchTypeSchema,
+  type ArchiveQuery,
   type BecaQuery,
   type ProjectQuery,
   type PublicationQuery,
@@ -117,5 +119,21 @@ export function parseSearchQuery(query: ParsedQs): SearchQuery {
     type: enumValue(SearchTypeSchema, query.type),
     page: numberValue(query.page),
     pageSize: numberValue(query.pageSize),
+  };
+}
+
+export function parseArchiveQuery(query: ParsedQs): ArchiveQuery {
+  const sort = first(query.sort);
+
+  return {
+    q: first(query.q),
+    section: first(query.section),
+    subsection: first(query.subsection),
+    kind: enumValue(ArchiveItemKindSchema, query.kind),
+    year: numberValue(query.year),
+    featured: booleanValue(query.featured),
+    page: numberValue(query.page),
+    pageSize: numberValue(query.pageSize),
+    sort: sort === "oldest" || sort === "title" ? sort : "recent",
   };
 }

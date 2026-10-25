@@ -97,7 +97,74 @@ try {
     content.response.status === 200 &&
       Array.isArray(content.body?.projects) &&
       content.body.projects.length > 0 &&
-      Array.isArray(content.body?.publications),
+      Array.isArray(content.body?.publications) &&
+      Array.isArray(content.body?.archive?.sections) &&
+      content.body.archive.sections.length === 6 &&
+      Array.isArray(content.body?.archive?.items) &&
+      content.body.archive.items.length > 0,
+  );
+
+  const archive = await getJson("/api/archive");
+  check(
+    "GET /api/archive",
+    archive.response.status === 200 &&
+      Array.isArray(archive.body?.sections) &&
+      archive.body.sections.length === 6 &&
+      Array.isArray(archive.body?.items) &&
+      archive.body.items.length > 0,
+  );
+
+  const archivePublications = await getJson(
+    "/api/archive/items?section=publicaciones&pageSize=5",
+  );
+  const expectedPublications = archive.body.items.filter(
+    (item) => item.section === "publicaciones",
+  ).length;
+  check(
+    "GET /api/archive/items con filtro de sección",
+    archivePublications.response.status === 200 &&
+      Array.isArray(archivePublications.body?.items) &&
+      archivePublications.body.items.length <= 5 &&
+      archivePublications.body.total === expectedPublications &&
+      archivePublications.body.items.every((item) => item.section === "publicaciones"),
+  );
+
+  const emptyArchive = await getJson(
+    "/api/archive/items?section=proyectos-pid&subsection=en-evaluacion",
+  );
+  check(
+    "GET /api/archive/items con subsección vacía",
+    emptyArchive.response.status === 200 && emptyArchive.body?.total === 0,
+  );
+
+  const archiveSlug = archive.body?.items?.[0]?.slug;
+  if (archiveSlug) {
+    const archiveDetail = await getJson(
+      `/api/archive/items/${encodeURIComponent(archiveSlug)}`,
+    );
+    check(
+      "GET /api/archive/items/:slug",
+      archiveDetail.response.status === 200 &&
+        archiveDetail.body?.slug === archiveSlug &&
+        typeof archiveDetail.body?.classification?.method === "string",
+    );
+  } else {
+    check("GET /api/archive/items/:slug", false, "no se obtuvo un slug del archivo");
+  }
+
+  const missingArchive = await getJson("/api/archive/items/registro-inexistente");
+  check(
+    "GET /api/archive/items/:slug inexistente → 404",
+    missingArchive.response.status === 404,
+  );
+
+  const archiveSearch = await getJson("/api/search?q=congreso&type=archivo");
+  check(
+    "GET /api/search con tipo archivo",
+    archiveSearch.response.status === 200 &&
+      Array.isArray(archiveSearch.body?.items) &&
+      archiveSearch.body.items.length > 0 &&
+      archiveSearch.body.items.every((item) => item.type === "archivo"),
   );
 
   const home = await getJson("/api/home");
@@ -174,11 +241,38 @@ try {
     spa.status === 200 && spaHtml.includes('id="root"'),
   );
 
+  const archiveSpa = await fetch(`${base}/archivo/congresos/congresos`);
+  const archiveSpaHtml = await archiveSpa.text();
+  check(
+    "Ruta SPA del archivo servida por el backend",
+    archiveSpa.status === 200 && archiveSpaHtml.includes('id="root"'),
+  );
+
+  const missingDocument = await fetch(`${base}/documentos/archivo/no-existe.pdf`);
+  const missingDocumentBody = await missingDocument.text();
+  check(
+    "Documento local inexistente → 404 (no HTML del SPA)",
+    missingDocument.status === 404 && !missingDocumentBody.includes('id="root"'),
+  );
+
+  const blockedDocument = await fetch(`${base}/documentos/archivo/intento.html`);
+  check(
+    "Formato no permitido en archivo local → 404",
+    blockedDocument.status === 404,
+  );
+
+  const hiddenDocument = await fetch(`${base}/documentos/archivo/.gitkeep`);
+  check(
+    "Archivo oculto del repositorio → 404",
+    hiddenDocument.status === 404,
+  );
+
   const security = await fetch(`${base}/api/content`);
   check(
     "Cabeceras de seguridad",
     security.headers.get("x-content-type-options") === "nosniff" &&
-      Boolean(security.headers.get("content-security-policy")),
+      Boolean(security.headers.get("content-security-policy")) &&
+      security.headers.get("content-security-policy")?.includes("frame-src 'self'"),
   );
 } catch (error) {
   failures += 1;

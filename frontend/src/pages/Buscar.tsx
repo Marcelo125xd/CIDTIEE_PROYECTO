@@ -23,11 +23,13 @@ const SEARCH_ICONS: Record<SearchType, IconName> = {
   novedad: "book",
   persona: "users",
   beca: "graduation",
+  archivo: "book",
 };
 
 const SEARCH_LINKS = [
   { to: "/observatorio/proyectos", label: "Proyectos", description: "Investigación en curso y finalizada" },
   { to: "/observatorio/publicaciones", label: "Publicaciones", description: "Producción científica del centro" },
+  { to: "/archivo", label: "Archivo", description: "Producción, actividades y documentos" },
   { to: "/servicios", label: "Servicios", description: "Capacidades técnicas para el sector" },
   { to: "/seminarios", label: "Seminarios", description: "Ciclo de actualización técnica" },
   { to: "/becas", label: "Becas", description: "Convocatorias y oportunidades" },

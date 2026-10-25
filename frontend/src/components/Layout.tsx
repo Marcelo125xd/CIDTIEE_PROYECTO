@@ -7,6 +7,7 @@ import { Icon } from "./Icon";
 const NAV_ITEMS = [
   { to: "/institucional", label: "Institucional" },
   { to: "/observatorio", label: "Observatorio" },
+  { to: "/archivo", label: "Archivo" },
   { to: "/transferencia", label: "Transferencia" },
   { to: "/formacion", label: "Formación" },
   { to: "/servicios", label: "Servicios" },
@@ -147,6 +148,9 @@ function SiteFooter() {
             </li>
             <li>
               <Link to="/observatorio">Observatorio</Link>
+            </li>
+            <li>
+              <Link to="/archivo">Archivo</Link>
             </li>
             <li>
               <Link to="/transferencia">Transferencia</Link>

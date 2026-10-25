@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { asyncHandler, notFound } from "../lib/http.js";
 import {
+  parseArchiveQuery,
   parseBecaQuery,
   parseProjectQuery,
   parsePublicationQuery,
@@ -108,6 +109,30 @@ export function createApiRouter(provider: ContentProvider): Router {
     "/calendar",
     asyncHandler(async (_req, res) => {
       res.json(await provider.getCalendar());
+    }),
+  );
+
+  router.get(
+    "/archive",
+    asyncHandler(async (_req, res) => {
+      res.setHeader("Cache-Control", "public, max-age=120");
+      res.json(await provider.getArchive());
+    }),
+  );
+
+  router.get(
+    "/archive/items",
+    asyncHandler(async (req, res) => {
+      res.json(await provider.listArchiveItems(parseArchiveQuery(req.query)));
+    }),
+  );
+
+  router.get(
+    "/archive/items/:slug",
+    asyncHandler(async (req, res) => {
+      const item = await provider.getArchiveItem(req.params.slug ?? "");
+      if (!item) notFound("Registro del archivo no encontrado");
+      res.json(item);
     }),
   );
 

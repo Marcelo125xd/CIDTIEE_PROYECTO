@@ -1,9 +1,13 @@
 import { readFile } from "node:fs/promises";
 import {
+  ARCHIVE_ITEM_KIND_LABELS,
   ContentSchema,
   includesText,
   normalizeText,
   paginate,
+  type Archive,
+  type ArchiveItem,
+  type ArchiveQuery,
   type Beca,
   type BecaQuery,
   type CalendarEvent,
@@ -77,6 +81,36 @@ function sortBecas(a: Beca, b: Beca) {
 
 function sortCalendar(a: CalendarEvent, b: CalendarEvent) {
   return a.date.localeCompare(b.date);
+}
+
+function sortRecentArchiveItems(a: ArchiveItem, b: ArchiveItem) {
+  const byYear = (b.year ?? 0) - (a.year ?? 0);
+  if (byYear !== 0) return byYear;
+  const byDate = (b.date ?? "").localeCompare(a.date ?? "");
+  if (byDate !== 0) return byDate;
+  if (a.featured !== b.featured) return a.featured ? -1 : 1;
+  return byTitle(a, b);
+}
+
+function sortOldestArchiveItems(a: ArchiveItem, b: ArchiveItem) {
+  const byYear = (a.year ?? 0) - (b.year ?? 0);
+  if (byYear !== 0) return byYear;
+  const byDate = (a.date ?? "").localeCompare(b.date ?? "");
+  if (byDate !== 0) return byDate;
+  return byTitle(a, b);
+}
+
+function archiveSearchText(item: ArchiveItem) {
+  return [
+    item.title,
+    item.summary,
+    ...item.body,
+    ...item.authors,
+    ...item.tags,
+    ...item.facts.flatMap((fact) => [fact.label, fact.value]),
+    item.status ?? "",
+    item.year ? String(item.year) : "",
+  ].join(" ");
 }
 
 function todayIso() {
@@ -295,6 +329,49 @@ export class LocalJsonProvider implements ContentProvider {
     return [...content.calendar].sort(sortCalendar);
   }
 
+  async getArchive(): Promise<Archive> {
+    const content = await this.getContent();
+    return content.archive;
+  }
+
+  async listArchiveItems(query: ArchiveQuery): Promise<Paginated<ArchiveItem>> {
+    const archive = await this.getArchive();
+    let items = [...archive.items];
+
+    if (query.section) items = items.filter((item) => item.section === query.section);
+    if (query.subsection) {
+      items = items.filter((item) => item.subsection === query.subsection);
+    }
+    if (query.kind) items = items.filter((item) => item.kind === query.kind);
+    if (query.year) items = items.filter((item) => item.year === query.year);
+    if (typeof query.featured === "boolean") {
+      items = items.filter((item) => item.featured === query.featured);
+    }
+    if (query.q) {
+      items = items.filter((item) => includesText(archiveSearchText(item), query.q!));
+    }
+
+    switch (query.sort) {
+      case "oldest":
+        items.sort(sortOldestArchiveItems);
+        break;
+      case "title":
+        items.sort(byTitle);
+        break;
+      default:
+        items.sort(sortRecentArchiveItems);
+    }
+
+    return paginate(items, query.page, query.pageSize ?? 10);
+  }
+
+  async getArchiveItem(slug: string): Promise<ArchiveItem | null> {
+    const archive = await this.getArchive();
+    return (
+      archive.items.find((item) => item.slug === slug || item.id === slug) ?? null
+    );
+  }
+
   async search(query: SearchQuery): Promise<Paginated<SearchResult>> {
     const content = await this.getContent();
     const rawQuery = query.q.trim();
@@ -402,6 +479,38 @@ export class LocalJsonProvider implements ContentProvider {
         `/becas#${beca.slug}`,
         beca.status,
         [...beca.conditions, beca.audience],
+      );
+    }
+
+    const archiveSections = new Map(
+      content.archive.sections.map((section) => [section.slug, section.title]),
+    );
+
+    for (const item of content.archive.items) {
+      // Los registros derivados ya están representados por su colección de
+      // origen. El buscador suma solo el catálogo propio del Archivo.
+      if (item.origin === "portal") continue;
+
+      add(
+        item.id,
+        "archivo",
+        item.title,
+        item.summary,
+        `/archivo/${item.section}/${item.subsection}/${item.slug}`,
+        [
+          ARCHIVE_ITEM_KIND_LABELS[item.kind],
+          archiveSections.get(item.section) ?? item.section,
+          item.year ? String(item.year) : "",
+        ]
+          .filter(Boolean)
+          .join(" · "),
+        [
+          ...item.body,
+          ...item.authors,
+          ...item.tags,
+          ...item.facts.map((fact) => `${fact.label} ${fact.value}`),
+          item.status ?? "",
+        ],
       );
     }
 
