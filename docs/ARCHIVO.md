@@ -225,13 +225,13 @@ El export crudo (`contexto_cidtiee/`) está ignorado por git y no se sirve. La �
 ## Limitaciones actuales
 
 - No hay archivos locales cargados todavía: `data/archivo/` solo contiene `.gitkeep`. Las fichas actuales son descriptivas y enlazan a fuentes externas.
-- La integración con Notion no está activa porque falta `NOTION_TOKEN` en `backend/.env` y las bases públicas no están compartidas con la conexión.
+- El token de Notion está configurado en `backend/.env`, pero el proveedor sigue desactivado: las ramas públicas son páginas con subpáginas, no data sources, y la conexión tiene acceso más amplio que el deseado. El portal usa el contenido curado local. Ver [NOTION.md](NOTION.md).
 - Las secciones `proyectos-pid/en-evaluacion` y `proyectos-pid/rechazados` están vacías y se muestran como tales.
 - Los enlaces externos pueden cambiar de dirección; conviene revisarlos periódicamente.
 
 ## Próximos pasos
 
-1. Configurar `NOTION_TOKEN` y compartir solo las ramas públicas con la integración.
+1. Restringir la conexión de Notion a las cinco ramas públicas y revisar sus permisos.
 2. Relevar los archivos adjuntos y descargar los que deban publicarse.
 3. Incorporar los PDF e imágenes a `data/archivo/` y declarar sus assets.
 4. Revisar los candidatos de `archive-report.json` y decidir cuáles pasan al catálogo.

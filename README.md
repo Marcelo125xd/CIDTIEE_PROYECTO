@@ -4,7 +4,7 @@ Portal institucional del **Centro de Investigación, Desarrollo y Transferencia 
 
 El sitio presenta la actividad del centro —investigación, transferencia, servicios, formación, seminarios, becas, agenda y medios— a partir del contenido ordenado del export de Notion y de la estructura definida en `contexto_cidtiee/Copia de Orden archivos.pdf`. Incluye además un **Archivo** propio del portal que ordena la producción y los materiales públicos en una jerarquía de secciones y subsecciones que Notion no tiene.
 
-> **Estado actual:** portal público de solo lectura. No hay usuarios, login, sesiones, roles ni base de datos. La integración con la API de Notion está preparada y se activa cuando se configura el token y se comparten las bases con la integración.
+> **Estado actual:** portal público de solo lectura. No hay usuarios, login, sesiones, roles ni base de datos. La integración con la API de Notion está preparada; el portal usa por defecto el contenido curado local y la activación requiere configurar el token y compartir las bases con la integración. Ver [Conexión con Notion](docs/NOTION.md).
 
 ## Stack
 
